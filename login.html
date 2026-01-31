@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Rakeshkumar Jewellers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 80px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .auth-container h2 {
+            color: var(--text-main);
+            font-family: serif;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .auth-form input {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .auth-btn {
+            width: 100%;
+            background: transparent;
+            color: var(--accent-color);
+            padding: 12px;
+            border: 2px solid var(--accent-color);
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+        }
+
+        .auth-btn:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            box-shadow: 0 0 20px var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .auth-link {
+            margin-top: 20px;
+            display: block;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .auth-link:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="classy-back-btn">&larr; Home</a>
+        <h1>Rakeshkumar Jewellers</h1>
+        <p>Patan | Trusted Gold Jewellers</p>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    </header>
+
+    <div class="auth-container">
+        <h2>Login</h2>
+        <form class="auth-form">
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="auth-btn">Sign In</button>
+        </form>
+        <a href="signup.html" class="auth-link">Don't have an account? Sign Up</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

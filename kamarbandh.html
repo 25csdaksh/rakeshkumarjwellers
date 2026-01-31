@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Kamarbandh Collection | Rakeshkumar Jewellers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Rakeshkumar Jewellers</h1>
+        <p>Patan | Trusted Gold Jewellers</p>
+        <nav>
+            <a href="index.html#home">Home</a>
+            <a href="index.html#collection">Collection</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#rate">Gold Rate</a>
+            <a href="appointment.html">Appointment</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero"
+        style="min-height: 40vh; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        <a href="silver.html" class="classy-back-btn">&larr; Back to Silver</a>
+        <h2 style="font-size: 3.5em; letter-spacing: 2px; text-transform: uppercase;">Silver Kamarbandh</h2>
+        <p style="font-size: 1.2em; font-style: italic;">Traditional Waist Belts (Kandora)</p>
+    </section>
+
+    <section class="gallery-section">
+        <div class="grid">
+            <div class="card">
+                <img src="assets/kamarbandh1.jpg" alt="Silver Kamarbandh 1">
+                <div class="container">
+                    <h4><b>Heavy Traditional Kandora</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/kamarbandh2.jpg" alt="Silver Kamarbandh 2">
+                <div class="container">
+                    <h4><b>Designer Waist Chain</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/kamarbandh3.jpg" alt="Silver Kamarbandh 3">
+                <div class="container">
+                    <h4><b>Simple Silver Belt</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/kamarbandh4.jpg" alt="Silver Kamarbandh 4">
+                <div class="container">
+                    <h4><b>Bridal Silver Kamarbandh</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/kamarbandh5.jpg" alt="Silver Kamarbandh 5">
+                <div class="container">
+                    <h4><b>Modern Fancy Kandora</b></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption" class="modal-caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

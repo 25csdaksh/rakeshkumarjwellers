@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Necklace Collection | Rakeshkumar Jewellers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Rakeshkumar Jewellers</h1>
+        <p>Patan | Trusted Gold Jewellers</p>
+        <nav>
+            <a href="index.html#home">Home</a>
+            <a href="index.html#collection">Collection</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#rate">Gold Rate</a>
+            <a href="appointment.html">Appointment</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero"
+        style="min-height: 40vh; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        <a href="gold.html" class="classy-back-btn">&larr; Back to Gold</a>
+        <h2 style="font-size: 3.5em; letter-spacing: 2px; text-transform: uppercase;">Necklace Collection</h2>
+        <p style="font-size: 1.2em; font-style: italic;">Traditional & Modern Gold Necklaces</p>
+    </section>
+
+    <section class="gallery-section">
+        <div class="grid">
+            <div class="card">
+                <img src="assets/necklace1.jpg" alt="Gold Necklace 1">
+                <div class="container">
+                    <h4><b>Royal Gold Choker</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/necklace2.jpg" alt="Gold Necklace 2">
+                <div class="container">
+                    <h4><b>Traditional Heavy Set</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/necklace3.jpg" alt="Gold Necklace 3">
+                <div class="container">
+                    <h4><b>Antique Gold Design</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/necklace4.jpg" alt="Gold Necklace 4">
+                <div class="container">
+                    <h4><b>Modern Gold Necklace</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/necklace5.jpg" alt="Gold Necklace 5">
+                <div class="container">
+                    <h4><b>Designer Gold Set</b></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption" class="modal-caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Jewellery | Rakeshkumar Jewellers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Rakeshkumar Jewellers</h1>
+        <p>Patan | Trusted Gold Jewellers</p>
+        <nav>
+            <a href="index.html#home">Home</a>
+            <a href="index.html#collection">Collection</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#rate">Gold Rate</a>
+            <a href="appointment.html">Appointment</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero"
+        style="min-height: 25vh; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        <a href="index.html#collection" class="classy-back-btn">&larr; Back to Collections</a>
+        <h2 style="font-size: 3.5em; letter-spacing: 2px; text-transform: uppercase;">Silver Jewellery</h2>
+        <p style="font-size: 1.2em; font-style: italic;">Pure 925 Sterling Silver Collection</p>
+    </section>
+
+    <section class="gallery-section">
+        <div class="grid">
+            <div class="card" onclick="window.location.href='payal.html'" style="cursor: pointer;">
+                <img src="assets/payal-main.jpg" alt="Payal">
+                <div class="container">
+                    <h4><b>Payal (Anklets)</b></h4>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='silver-rings.html'" style="cursor: pointer;">
+                <img src="assets/silver-rings-main.jpg" alt="Silver Rings">
+                <div class="container">
+                    <h4><b>Silver Rings</b></h4>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='kamarbandh.html'" style="cursor: pointer;">
+                <img src="assets/kamarbandh-main.png" alt="kamarbandh">
+                <div class="container">
+                    <h4><b>kamarbandh</b></h4>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='pooja.html'" style="cursor: pointer;">
+                <img src="assets/pooja-main.jpg" alt="Pooja Items">
+                <div class="container">
+                    <h4><b>Pooja Items</b></h4>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='silver-bracelets.html'" style="cursor: pointer;">
+                <img src="assets/silver-bracelets-main.jpg" alt="Silver Bracelets">
+                <div class="container">
+                    <h4><b>Silver Bracelets</b></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Rakeshkumar Jewellers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-container {
+            max-width: 500px;
+            margin: 80px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .auth-container h2 {
+            color: var(--text-main);
+            font-family: serif;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .auth-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .auth-form input,
+        .auth-form textarea,
+        .auth-form select {
+            width: 100%;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--accent-color);
+            padding: 12px;
+            border-radius: 5px;
+            color: var(--text-main);
+        }
+
+        .auth-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .auth-btn {
+            width: 100%;
+            background: transparent;
+            color: var(--accent-color);
+            padding: 15px;
+            border: 2px solid var(--accent-color);
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+            margin-top: 10px;
+        }
+
+        .auth-btn:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            box-shadow: 0 0 20px var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .info-text {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="classy-back-btn">&larr; Home</a>
+        <h1>Rakeshkumar Jewellers</h1>
+        <p>Patan | Trusted Gold Jewellers</p>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    </header>
+
+    <div class="auth-container">
+        <h2>Book Appointment</h2>
+        <p class="info-text">Secure your slot for a personalized session</p>
+
+        <form class="auth-form" id="appointmentForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter mobile number" required>
+
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Preferred Time</label>
+            <input type="time" id="time" required>
+
+            <label for="service">Purpose of Visit</label>
+            <select id="service">
+                <option value="Bridal Jewellery">Bridal Jewellery</option>
+                <option value="Gold Purchase">Gold Purchase (22K 916)</option>
+                <option value="Silver Collection">Silver Collection</option>
+                <option value="Diamond Jewellery">Diamond Jewellery</option>
+                <option value="Custom Design">Custom Design Consultation</option>
+            </select>
+
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" placeholder="Any specific requirements?"></textarea>
+
+            <button type="submit" class="auth-btn">Book via WhatsApp</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+            const service = document.getElementById("service").value;
+            const message = document.getElementById("message").value;
+
+            // Using the phone number from previous context 8799288538
+            const whatsappNumber = "8799288538";
+
+            const text = `*New Appointment Request*%0A%0A` +
+                `*Name:* ${name}%0A` +
+                `*Phone:* ${phone}%0A` +
+                `*Date:* ${date}%0A` +
+                `*Time:* ${time}%0A` +
+                `*Purpose:* ${service}%0A` +
+                `*Message:* ${message}`;
+
+            const url = `https://wa.me/91${whatsappNumber}?text=${text}`;
+            window.open(url, "_blank");
+        });
+    </script>
+</body>
+
+</html>

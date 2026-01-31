@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Jewellery | Rakeshkumar Jewellers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Rakeshkumar Jewellers</h1>
+        <p>Patan | Trusted Gold Jewellers</p>
+        <nav>
+            <a href="index.html#home">Home</a>
+            <a href="index.html#collection">Collection</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#rate">Gold Rate</a>
+            <a href="appointment.html">Appointment</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero"
+        style="min-height: 25vh; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        <a href="index.html#collection" class="classy-back-btn">&larr; Back to Collections</a>
+        <h2 style="font-size: 3.5em; letter-spacing: 2px; text-transform: uppercase;">Gold Jewellery</h2>
+        <p style="font-size: 1.2em; font-style: italic;">Explore our exclusive Gold Categories</p>
+    </section>
+
+    <section class="gallery-section">
+        <div class="grid">
+            <div class="card" onclick="window.location.href='necklace.html'" style="cursor: pointer;">
+                <img src="assets/necklace-main.jpg" alt="Necklace">
+                <div class="container">
+                    <h4><b>Necklace</b></h4>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='mangalsutra.html'" style="cursor: pointer;">
+                <img src="assets/mangalsutra-cover.jpg" alt="Mangalsutra">
+                <div class="container">
+                    <h4><b>Mangalsutra</b></h4>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='bangles.html'" style="cursor: pointer;">
+                <img src="assets/bangles-main.jpg" alt="Bangles">
+                <div class="container">
+                    <h4><b>Bangles</b></h4>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='earrings.html'" style="cursor: pointer;">
+                <img src="assets/earrings-main.jpg" alt="Earrings">
+                <div class="container">
+                    <h4><b>Earrings</b></h4>
+                </div>
+            </div>
+            <!-- User requested "bangals" twice, so assuming they meant "Rings" or similar for the 5th item to keep variety -->
+            <div class="card" onclick="window.location.href='rings.html'" style="cursor: pointer;">
+                <img src="assets/rings-main.jpg" alt="Rings">
+                <div class="container">
+                    <h4><b>Rings</b></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

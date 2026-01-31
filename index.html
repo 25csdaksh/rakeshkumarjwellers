@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rakeshkumar Jewellers | Gold Jewellers Patan</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="auth-nav">
+            <a href="login.html" class="auth-btn-small">Login</a>
+            <a href="signup.html" class="auth-btn-small">Sign up</a>
+        </div>
+        <h1>Rakeshkumar Jewellers</h1>
+        <p>Patan | Trusted Gold Jewellers</p>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#collection">Collection</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#rate">Gold Rate</a>
+            <a href="#location">Location</a>
+            <a href="appointment.html">Appointment</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section id="home" class="section hero">
+        <h2>વિશ્વાસ અને શુદ્ધતાનો વારસો</h2>
+        <p>A Legacy of Trust & Pure Gold Jewellery</p>
+        <a class="btn" href="#collection">View Collections</a>
+        <a class="btn gold" href="appointment.html">Book Appointment</a>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+
+    </section>
+
+    <!-- Collection -->
+    <section id="collection" class="section">
+        <h2>Our Collections</h2>
+        <div class="grid">
+            <div class="card" onclick="window.location.href='gold.html'" style="cursor: pointer;">
+                <img src="./assets/gold-collection.jpg" alt="Gold Jewellery">
+                <h3>Gold Jewellery</h3>
+            </div>
+            <div class="card" onclick="window.location.href='silver.html'" style="cursor: pointer;">
+                <img src="./assets/silver-jewellery-new.jpg" alt="Silver Jewellery">
+                <h3>Silver Jewellery</h3>
+            </div>
+            <div class="card" onclick="window.location.href='diamond.html'" style="cursor: pointer;">
+                <img src="./assets/diamond jwellary.jpeg" alt="Diamond Jewellery">
+                <h3>Diamond Jewellery</h3>
+            </div>
+            <div class="card" onclick="window.location.href='bridal.html'" style="cursor: pointer;">
+                <img src="./assets/bridal-latest.jpg" alt="Bridal Collection">
+                <h3>Bridal Collection</h3>
+            </div>
+            <div class="card" onclick="window.location.href='custom-designs.html'" style="cursor: pointer;">
+                <img src="./assets/custom1.jpg" alt="Custom Designs">
+                <h3>Custom Designs</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+        <h2>Gallery</h2>
+        <div class="slider">
+            <img src="./assets/gallery-1.jpg" class="slide active" alt="Gallery Image 1" title="Gallery Image 1">
+            <img src="./assets/gallery-2.jpg" class="slide" alt="Gallery Image 2" title="Gallery Image 2">
+            <img src="./assets/gallery-3.jpg" class="slide" alt="Gallery Image 3" title="Gallery Image 3">
+            <img src="./assets/gallery-4.jpg" class="slide" alt="Gallery Image 4" title="Gallery Image 4">
+            <img src="./assets/gallery-5.jpg" class="slide" alt="Gallery Image 5" title="Gallery Image 5">
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>
+            Rakeshkumar Jewellers, Patan વર્ષોથી વિશ્વાસ, શુદ્ધતા અને ગુણવત્તા સાથે
+            BIS Hallmark પ્રમાણિત સોનાની જ્વેલરી પ્રદાન કરે છે.
+        </p>
+        <br>
+        <p>
+            Established with a vision to provide the finest gold and silver jewellery, we take pride in our
+            craftsmanship and purity.
+            Whether it's traditional bridal sets or modern daily wear, every piece tells a story of elegance and
+            tradition.
+            Visit us for an exclusive collection of 22K 916 Hallmark Gold and 925 Sterling Silver jewellery.
+        </p>
+    </section>
+
+    <!-- Live Gold Rate -->
+    <section id="rate" class="section dark">
+        <h2>Live Gold Rate</h2>
+        <button onclick="setLang('gu')">ગુજરાતી</button>
+        <button onclick="setLang('en')">English</button>
+
+        <h2 id="title"></h2>
+        <p id="subtitle"></p>
+
+        <div class="rates">
+            <p>24K Gold: <span id="gold24">Loading...</span></p>
+            <p>22K Gold: <span id="gold22">Loading...</span></p>
+            <p>Silver: <span id="silver">Loading...</span></p>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="section">
+        <h2>Store Location</h2>
+        <p>Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan, Gujarat</p>
+        <iframe src="https://www.google.com/maps?q=23.8500768,72.1166173&output=embed" width="100%" height="300"
+            class="map-iframe" loading="lazy" title="Store Location Map">
+        </iframe>
+    </section>
+
+    <!-- Appointment -->
+    <section id="appointment" class="section dark">
+        <h2>Book an Appointment</h2>
+        <div class="container">
+            <p style="margin-bottom: 30px; font-style: italic; color: var(--accent-color);">Your Vision, Our
+                Craftsmanship - Schedule a personalized session</p>
+            <form id="appointmentForm" onsubmit="sendWhatsApp(event)">
+                <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Full Name" required>
+
+                    <label for="mobile">Phone</label>
+                    <input type="tel" id="mobile" placeholder="Mobile Number" required>
+
+                    <div style="display: flex; gap: 20px;">
+                        <div style="flex: 1;">
+                            <label for="datetime">Preferred Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="time">Preferred Time</label>
+                            <input type="time" id="time" required>
+                        </div>
+                    </div>
+
+                    <label for="purpose">Purpose</label>
+                    <select id="purpose">
+                        <option>Bridal Jewellery</option>
+                        <option>Custom Design Consultation</option>
+                        <option>Gold Investment</option>
+                        <option>Diamond Jewellery</option>
+                        <option>Silver Collection</option>
+                    </select>
+
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" placeholder="Tell us what you are looking for..."
+                        style="width: 80%; max-width: 400px; padding: 12px; margin: 10px auto; display: block; border: 1px solid var(--accent-color); border-radius: 4px; background: rgba(255, 255, 255, 0.9); height: 100px;"></textarea>
+
+                    <button type="submit" class="btn gold"
+                        style="width: 100%; max-width: 425px; margin: 20px auto; display: block;">Book via
+                        WhatsApp</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>📞 +91 8799288538 👨🏻💼 Dakshbhai soni</p>
+        <p>📧 dakshsoni1023@gmail.com</p>
+        <p><a href="https://wa.me/918799288538" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                Chat on WhatsApp 💬
+            </a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
