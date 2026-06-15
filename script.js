@@ -270,4 +270,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
     }
+
+    // Dynamically wrap hero h2 and p for a modern glassmorphic title plate
+    const heroes = document.querySelectorAll(".hero");
+    heroes.forEach(hero => {
+        if (hero.id === "home") return; // Skip homepage hero wrapper
+        const h2 = hero.querySelector("h2");
+        const p = hero.querySelector("p");
+        if (h2 && p) {
+            const wrapper = document.createElement("div");
+            wrapper.className = "hero-title-plate";
+            // Insert wrapper before h2
+            h2.parentNode.insertBefore(wrapper, h2);
+            // Move h2 and p into wrapper
+            wrapper.appendChild(h2);
+            wrapper.appendChild(p);
+        }
+    });
 });
