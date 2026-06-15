@@ -785,3 +785,37 @@ footer p {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px var(--accent-glow);
 }
+
+/* Product Card Detail Layout */
+.product-desc {
+    font-size: 0.85em;
+    opacity: 0.75;
+    margin: -10px auto 20px auto;
+    line-height: 1.55;
+    color: var(--text-main);
+    text-align: center;
+    max-width: 250px;
+    height: 72px; /* Fixed height for clean grid alignment */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card-btn {
+    width: 100%;
+    padding: 12px 0;
+    margin-top: auto;
+    font-size: 0.75em;
+    letter-spacing: 1.5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.card-btn:hover {
+    background: var(--accent-color);
+    color: var(--primary-color) !important;
+}

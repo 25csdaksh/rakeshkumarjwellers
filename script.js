@@ -103,9 +103,18 @@ function updateAuthNav() {
     if (isLoggedIn) {
         const currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");
         const name = currentUser.name ? currentUser.name.split(" ")[0] : "User";
+        const cartKey = "cart_" + currentUser.email;
+        const cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
+        const cartCount = cart.length;
         authNav.innerHTML = `
             <span style="color: var(--accent-color); font-family: 'Inter', sans-serif; font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; align-self: center; margin-right: 15px;">Welcome, ${name}</span>
+            <a href="profile.html" class="auth-btn-small" style="margin-right: 10px;">Cart (${cartCount})</a>
             <a href="#" onclick="logout(event)" class="auth-btn-small">Logout</a>
+        `;
+    } else {
+        authNav.innerHTML = `
+            <a href="login.html" class="auth-btn-small">Login</a>
+            <a href="signup.html" class="auth-btn-small">Sign up</a>
         `;
     }
 }
@@ -116,6 +125,27 @@ function logout(event) {
     localStorage.removeItem("currentUser");
     alert("You have logged out successfully!");
     window.location.href = "index.html";
+}
+
+function addToCart(title, img, desc) {
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+        alert("Please Login to add items to your cart!");
+        window.location.href = "login.html";
+        return;
+    }
+    const currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");
+    const cartKey = "cart_" + currentUser.email;
+    const cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
+    
+    if (cart.some(item => item.title === title)) {
+        alert(`${title} is already in your cart!`);
+        return;
+    }
+    
+    cart.push({ title, img, desc });
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+    alert(`${title} has been successfully added to your cart!`);
+    updateAuthNav();
 }
 
 function toggleTheme() {

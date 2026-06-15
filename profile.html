@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile & Cart | Rakeshkumar Jewellers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .profile-section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .user-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 8px 30px var(--shadow-color);
+            text-align: center;
+            height: fit-content;
+        }
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            font-size: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: bold;
+        }
+        .user-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6em;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
+        }
+        .user-card p {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin: 0;
+            word-break: break-all;
+        }
+        .cart-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            border-radius: 4px;
+            box-shadow: 0 8px 30px var(--shadow-color);
+        }
+        .cart-card h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2em;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            color: var(--accent-color);
+        }
+        .cart-item {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 20px;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+        }
+        .cart-item-info h4 {
+            margin: 0 0 5px 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-main);
+            text-align: left;
+        }
+        .cart-item-info p {
+            margin: 0;
+            font-size: 0.85em;
+            opacity: 0.75;
+            text-align: left;
+        }
+        .remove-btn {
+            background: transparent;
+            border: 1px solid #ff4d4d;
+            color: #ff4d4d;
+            padding: 6px 14px;
+            font-size: 0.75em;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .remove-btn:hover {
+            background: #ff4d4d;
+            color: white;
+        }
+        .cart-empty {
+            text-align: center;
+            padding: 40px 0;
+            opacity: 0.7;
+            font-style: italic;
+        }
+        .checkout-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+        }
+        .checkout-total {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        .checkout-total span {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="classy-back-btn">&larr; Home</a>
+        <h1>Rakeshkumar Jewellers</h1>
+        <p>Patan | Trusted Gold Jewellers</p>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    </header>
+
+    <div class="profile-section">
+        <div class="profile-container">
+            <!-- User Card -->
+            <div class="user-card">
+                <div class="user-avatar" id="avatarLetter">U</div>
+                <h3 id="profileName">Loading User...</h3>
+                <p id="profileEmail">Loading Email...</p>
+            </div>
+
+            <!-- Cart Card -->
+            <div class="cart-card">
+                <h2>My Shopping Cart</h2>
+                <div id="cartItemsContainer">
+                    <p class="cart-empty">Loading your cart...</p>
+                </div>
+                
+                <div class="checkout-container" id="checkoutBlock" style="display: none;">
+                    <div class="checkout-total">
+                        Total Items: <span id="cartTotalItems">0</span>
+                    </div>
+                    <button class="btn gold" onclick="checkoutCart()">Book Selection via WhatsApp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if user is logged in
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            alert("Please login to access your profile!");
+            window.location.href = "login.html";
+        } else {
+            // Load user profile details
+            const user = JSON.parse(localStorage.getItem("currentUser") || "{}");
+            document.getElementById("profileName").innerText = user.name || "Customer";
+            document.getElementById("profileEmail").innerText = user.email || "";
+            document.getElementById("avatarLetter").innerText = user.name ? user.name.charAt(0).toUpperCase() : "U";
+            
+            // Load cart items
+            loadCartItems();
+        }
+
+        function loadCartItems() {
+            const user = JSON.parse(localStorage.getItem("currentUser") || "{}");
+            const cartKey = "cart_" + user.email;
+            const cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
+            const container = document.getElementById("cartItemsContainer");
+            const checkoutBlock = document.getElementById("checkoutBlock");
+            
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="cart-empty">Your shopping cart is empty. Explore our collection to add items!</p>`;
+                checkoutBlock.style.display = "none";
+                return;
+            }
+            
+            checkoutBlock.style.display = "flex";
+            document.getElementById("cartTotalItems").innerText = cart.length;
+            
+            let html = "";
+            cart.forEach((item, idx) => {
+                html += `
+                    <div class="cart-item">
+                        <img src="${item.img}" alt="${item.title}">
+                        <div class="cart-item-info">
+                            <h4>${item.title}</h4>
+                            <p>${item.desc || "Exquisite hand-crafted gold/diamond jewelry design."}</p>
+                        </div>
+                        <button class="remove-btn" onclick="removeFromCart(${idx})">Remove</button>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function removeFromCart(idx) {
+            const user = JSON.parse(localStorage.getItem("currentUser") || "{}");
+            const cartKey = "cart_" + user.email;
+            const cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
+            
+            const removedItem = cart.splice(idx, 1)[0];
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+            alert(`${removedItem.title} removed from cart!`);
+            loadCartItems();
+            updateAuthNav();
+        }
+
+        function checkoutCart() {
+            const user = JSON.parse(localStorage.getItem("currentUser") || "{}");
+            const cartKey = "cart_" + user.email;
+            const cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
+            
+            if (cart.length === 0) return;
+            
+            let itemText = "";
+            cart.forEach((item, idx) => {
+                itemText += `- ${item.title}%0A`;
+            });
+            
+            const whatsappNumber = "8799288538";
+            const text = `*New Selection Inquiry*%0A%0A` +
+                `*Name:* ${user.name}%0A` +
+                `*Email:* ${user.email}%0A%0A` +
+                `*Interested Items:*%0A${itemText}%0A` +
+                `Please consult me on the rates and availability.`;
+                
+            const url = `https://wa.me/91${whatsappNumber}?text=${text}`;
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
