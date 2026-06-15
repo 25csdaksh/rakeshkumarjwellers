@@ -22,6 +22,12 @@
     --accent-glow: rgba(197, 160, 89, 0.25);
     --border-color: rgba(197, 160, 89, 0.22);
     --glass-border: rgba(197, 160, 89, 0.18);
+    
+    /* Luxury CSS Gradient Backgrounds */
+    --header-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --hero-bg: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.08) 0%, rgba(15, 23, 42, 0) 80%), linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --rate-bg: linear-gradient(135deg, #131924 0%, #0b0f17 100%);
+    --appointment-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
 }
 
 .dark-mode {
@@ -46,6 +52,12 @@
     --accent-glow: rgba(226, 185, 60, 0.3);
     --border-color: rgba(226, 185, 60, 0.2);
     --glass-border: rgba(226, 185, 60, 0.15);
+    
+    /* Luxury CSS Gradient Backgrounds (Dark Mode) */
+    --header-bg: linear-gradient(135deg, #11141c 0%, #06070b 100%);
+    --hero-bg: radial-gradient(circle at 50% 50%, rgba(226, 185, 60, 0.08) 0%, rgba(6, 7, 11, 0) 80%), linear-gradient(135deg, #0f1118 0%, #06070b 100%);
+    --rate-bg: linear-gradient(135deg, #090b11 0%, #030406 100%);
+    --appointment-bg: linear-gradient(135deg, #0f1118 0%, #06070b 100%);
 }
 
 body {
@@ -59,9 +71,7 @@ body {
 
 /* Header & Navigation */
 .header {
-    background: linear-gradient(rgba(10, 14, 23, 0.75), rgba(10, 14, 23, 0.85)), url('./assets/header-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    background: var(--header-bg);
     color: var(--accent-color);
     padding: 70px 20px;
     text-align: center;
@@ -219,10 +229,7 @@ nav a:hover::after {
 }
 
 #rate {
-    background: linear-gradient(rgba(8, 9, 12, 0.85), rgba(8, 9, 12, 0.95)), url('./assets/rate-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: var(--rate-bg);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
@@ -266,10 +273,7 @@ nav a:hover::after {
 /* Hero Section */
 .hero {
     position: relative;
-    background: linear-gradient(rgba(8, 9, 12, 0.75), rgba(8, 9, 12, 0.85)), url('./assets/gold-hero-bg-new.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: var(--hero-bg);
     color: var(--accent-color);
     padding: 140px 20px;
     text-align: center;
@@ -455,10 +459,7 @@ form select:focus {
 #appointment {
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
-    background: linear-gradient(rgba(8, 9, 12, 0.85), rgba(8, 9, 12, 0.95)), url('./assets/appointment-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: var(--appointment-bg);
 }
 
 #appointment h2 {
