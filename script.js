@@ -200,40 +200,74 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Lightbox Logic
+    // Product Detail Split-Modal Logic
     const modal = document.getElementById("imageModal");
     if (modal) {
-        const modalImg = document.getElementById("img01");
-        const captionText = document.getElementById("caption");
-        const closeBtn = document.getElementsByClassName("close")[0];
+        // Define global close helper
+        window.closeModal = function() {
+            modal.style.display = "none";
+        };
 
-        // Attach click event to all card images
+        // Attach click event to all product card images
         const images = document.querySelectorAll(".card img");
         images.forEach(img => {
             img.style.cursor = "pointer"; // Indicate clickable
             img.addEventListener("click", function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                // Try to find the caption text from the sibling container h4
-                const container = this.nextElementSibling;
-                let caption = "";
-                if (container && container.querySelector("h4")) {
-                    caption = container.querySelector("h4").innerText;
-                }
-                captionText.innerHTML = caption;
+                const card = this.closest(".card");
+                if (!card) return;
+                
+                const titleElement = card.querySelector("h4");
+                const descElement = card.querySelector(".product-desc");
+                
+                const title = titleElement ? titleElement.innerText : "Luxury Jewelry Piece";
+                const desc = descElement ? descElement.innerText : "Exquisite handcrafted design using premium precious metals and stones.";
+                const imgSrc = this.src;
+
+                // Display modal as a flex container for centering
+                modal.style.display = "flex";
+                
+                // Escape single quotes for safe event arguments
+                const safeTitle = title.replace(/'/g, "\\'");
+                const safeDesc = desc.replace(/'/g, "\\'");
+                
+                modal.innerHTML = `
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div class="modal-wrapper">
+                        <div class="modal-left">
+                            <img src="${imgSrc}" class="modal-product-img" alt="${title}">
+                        </div>
+                        <div class="modal-right">
+                            <h2 class="modal-product-title">${title}</h2>
+                            <p class="modal-product-spec">Exclusive Collection</p>
+                            <p class="modal-product-desc">${desc}</p>
+                            
+                            <div class="modal-spec-grid">
+                                <div class="modal-spec-item">
+                                    <span class="spec-label">Availability</span>
+                                    <span class="spec-value">In Stock</span>
+                                </div>
+                                <div class="modal-spec-item">
+                                    <span class="spec-label">Purity Guarantee</span>
+                                    <span class="spec-value">BIS Hallmark Certified</span>
+                                </div>
+                                <div class="modal-spec-item">
+                                    <span class="spec-label">Service</span>
+                                    <span class="spec-value">Lifetime Exchange Guarantee</span>
+                                </div>
+                            </div>
+                            
+                            <button class="btn gold modal-cart-btn" onclick="addToCart('${safeTitle}', '${imgSrc}', '${safeDesc}')">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
             });
         });
-
-        // Close logic
-        closeBtn.onclick = function () {
-            modal.style.display = "none";
-        }
 
         // Click outside to close
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
-        }
+        };
     }
 });
