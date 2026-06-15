@@ -334,7 +334,7 @@ nav a:hover::after {
     font-weight: 400;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--text-main);
+    color: var(--text-light);
     opacity: 0.85;
     margin: 15px 0 0 0;
 }
