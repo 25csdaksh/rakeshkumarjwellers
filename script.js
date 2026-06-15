@@ -64,6 +64,60 @@ async function fetchGoldRates() {
     }
 }
 
+// Auth Guard Routing Configuration
+const protectedPages = [
+    "necklace.html",
+    "mangalsutra.html",
+    "bangles.html",
+    "earrings.html",
+    "rings.html",
+    "1diamond-jewellery.html",
+    "diamond-bracelets.html",
+    "diamond-necklace.html",
+    "payal.html",
+    "pooja.html",
+    "silver-bracelets.html",
+    "silver-rings.html"
+];
+
+function checkAuth() {
+    const path = window.location.pathname;
+    const page = path.substring(path.lastIndexOf('/') + 1);
+    if (protectedPages.includes(page)) {
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            localStorage.setItem("redirectAfterLogin", page);
+            alert("Please Login or Sign Up to view the premium items in this collection!");
+            window.location.href = "login.html";
+        }
+    }
+}
+
+// Check authorization immediately on load before rendering to prevent visual flash
+checkAuth();
+
+function updateAuthNav() {
+    const authNav = document.querySelector(".auth-nav");
+    if (!authNav) return;
+    
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (isLoggedIn) {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const name = currentUser.name ? currentUser.name.split(" ")[0] : "User";
+        authNav.innerHTML = `
+            <span style="color: var(--accent-color); font-family: 'Inter', sans-serif; font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; align-self: center; margin-right: 15px;">Welcome, ${name}</span>
+            <a href="#" onclick="logout(event)" class="auth-btn-small">Logout</a>
+        `;
+    }
+}
+
+function logout(event) {
+    if (event) event.preventDefault();
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("currentUser");
+    alert("You have logged out successfully!");
+    window.location.href = "index.html";
+}
+
 function toggleTheme() {
     document.body.classList.toggle("dark-mode");
     if (document.body.classList.contains("dark-mode")) {
@@ -92,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInitialGoldRate();
     fetchGoldRates();
     startSlideshow();
+    updateAuthNav();
 
     // Check LocalStorage first, then System Preference
     const savedTheme = localStorage.getItem("theme");

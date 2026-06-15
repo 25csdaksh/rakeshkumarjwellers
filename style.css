@@ -1,34 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* Light Theme (Sophisticated Ivory & Champagne Gold) */
-    --bg-color: #FAF8F5;
-    --card-bg: #FFFFFF;
-    --primary-color: #0E121A;
-    --text-main: #1C1E24;
-    --text-light: #FAF8F5;
-    --accent-color: #C5A059;
+    /* ========================================================
+       THEME COLOR COMBINATION - 60:25:15 ratio (Light Theme)
+       ======================================================== */
+    
+    /* [60% Dominant Color] - Main Neutral Canvas / Body Background */
+    --bg-color: #FAF8F5; /* Warm Ivory canvas backdrop */
+    
+    /* [25% Secondary Color] - Containers, Headers, Text & Substructures */
+    --card-bg: #FFFFFF; /* White panels & cards */
+    --primary-color: #0E121A; /* Midnight black navigation frame */
+    --text-main: #1C1E24; /* Deep anthracite text color */
+    --text-light: #FAF8F5; /* Ivory text on dark panels */
+    --glass-bg: rgba(250, 248, 245, 0.85);
+    --shadow-color: rgba(0, 0, 0, 0.04);
+    
+    /* [15% Accent Color] - Action elements, active indicators & borders */
+    --accent-color: #C5A059; /* Metallic champagne gold accent */
     --accent-hover: #A8833F;
     --accent-glow: rgba(197, 160, 89, 0.25);
     --border-color: rgba(197, 160, 89, 0.25);
-    --shadow-color: rgba(0, 0, 0, 0.04);
-    --glass-bg: rgba(250, 248, 245, 0.85);
     --glass-border: rgba(197, 160, 89, 0.2);
 }
 
 .dark-mode {
-    /* Dark Theme (Obsidian & Metallic Gold) */
-    --bg-color: #08090C;
-    --card-bg: #111317;
+    /* ========================================================
+       THEME COLOR COMBINATION - 60:25:15 ratio (Dark Theme)
+       ======================================================== */
+    
+    /* [60% Dominant Color] - Main Neutral Canvas / Body Background */
+    --bg-color: #08090C; /* Deep obsidian space backdrop */
+    
+    /* [25% Secondary Color] - Containers, Headers, Text & Substructures */
+    --card-bg: #111317; /* Dark charcoal panel background */
     --primary-color: #08090C;
-    --text-main: #E5E7EB;
+    --text-main: #E5E7EB; /* Light silver main text color */
     --text-light: #E5E7EB;
-    --accent-color: #D4AF37; /* Royal gold */
-    --accent-hover: #F3D268;
-    --accent-glow: rgba(212, 175, 55, 0.3);
-    --border-color: rgba(212, 175, 55, 0.2);
-    --shadow-color: rgba(0, 0, 0, 0.4);
     --glass-bg: rgba(8, 9, 12, 0.85);
+    --shadow-color: rgba(0, 0, 0, 0.45);
+    
+    /* [15% Accent Color] - Action elements, active indicators & borders */
+    --accent-color: #D4AF37; /* Royal golden accents */
+    --accent-hover: #F3D268;
+    --accent-glow: rgba(212, 175, 55, 0.35);
+    --border-color: rgba(212, 175, 55, 0.25);
     --glass-border: rgba(212, 175, 55, 0.15);
 }
 

@@ -80,13 +80,35 @@
 
     <div class="auth-container">
         <h2>Login</h2>
-        <form class="auth-form">
-            <input type="email" placeholder="Email Address" required>
-            <input type="password" placeholder="Password" required>
+        <form class="auth-form" id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email Address" required>
+            <input type="password" id="loginPass" placeholder="Password" required>
             <button type="submit" class="auth-btn">Sign In</button>
         </form>
         <a href="signup.html" class="auth-link">Don't have an account? Sign Up</a>
     </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+            const password = document.getElementById("loginPass").value;
+
+            const users = JSON.parse(localStorage.getItem("users") || "[]");
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("currentUser", JSON.stringify(user));
+                alert("Login successful!");
+                const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
+                localStorage.removeItem("redirectAfterLogin");
+                window.location.href = redirectPage;
+            } else {
+                alert("Invalid email or password!");
+            }
+        });
+    </script>
 
     <footer>
         <p>&copy; 2026 Rakeshkumar Jewellers, Zaveri-bazar, soni-vado, Patan</p>
