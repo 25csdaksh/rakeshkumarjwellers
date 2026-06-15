@@ -64,27 +64,8 @@ async function fetchGoldRates() {
     }
 }
 
-const content = {
-    gu: {
-        title: "વિશ્વાસ અને શુદ્ધતાનો વારસો",
-        subtitle: "Rakeshkumar Jewellers, Patan"
-    },
-    en: {
-        title: "A Legacy of Trust & Pure Gold Jewellery",
-        subtitle: "Rakeshkumar Jewellers, Patan"
-    }
-};
-
-function setLang(lang) {
-    if (document.getElementById("title")) {
-        document.getElementById("title").innerText = content[lang].title;
-        document.getElementById("subtitle").innerText = content[lang].subtitle;
-    }
-}
-
 function toggleTheme() {
     document.body.classList.toggle("dark-mode");
-    // Save to localStorage
     if (document.body.classList.contains("dark-mode")) {
         localStorage.setItem("theme", "dark");
     } else {
@@ -110,7 +91,6 @@ const startSlideshow = () => {
 document.addEventListener('DOMContentLoaded', () => {
     setInitialGoldRate();
     fetchGoldRates();
-    setLang("gu"); // default language
     startSlideshow();
 
     // Check LocalStorage first, then System Preference

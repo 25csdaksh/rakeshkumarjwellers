@@ -123,23 +123,29 @@ nav a:hover::after {
     left: 40px;
     text-decoration: none;
     color: var(--accent-color);
-    border: 1px solid var(--border-color);
-    padding: 10px 24px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05em;
+    border: 1px solid var(--accent-color);
+    padding: 12px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    background: rgba(10, 14, 23, 0.4);
-    backdrop-filter: blur(8px);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    letter-spacing: 2.5px;
+    background: rgba(10, 14, 23, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .classy-back-btn:hover {
     background: var(--accent-color);
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     border-color: var(--accent-color);
-    box-shadow: 0 0 20px var(--accent-glow);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--accent-glow);
+    transform: translateX(-6px);
 }
 
 /* Authentication Navigation */
@@ -515,7 +521,7 @@ form button {
     display: none;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: opacity 1s ease-in-out;
 }
 
@@ -651,4 +657,115 @@ footer p {
     .slider {
         height: 350px;
     }
+}
+
+/* Contact Us Modern Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+.contact-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 8px 30px var(--shadow-color);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.contact-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.contact-card:hover::after {
+    border-color: rgba(212, 175, 55, 0.15);
+    margin: 8px;
+}
+
+.contact-icon {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+}
+
+.contact-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5em;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    color: var(--text-main);
+}
+
+.contact-card p {
+    font-size: 0.9em;
+    color: var(--text-main);
+    opacity: 0.75;
+    margin: 0 0 20px 0;
+}
+
+.contact-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--accent-color) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-break: break-all;
+}
+
+.contact-link:hover {
+    color: var(--accent-hover) !important;
+}
+
+.contact-owner {
+    font-size: 0.8em !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    opacity: 0.6 !important;
+}
+
+.contact-whatsapp-btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--primary-color) !important;
+    padding: 12px 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px var(--accent-glow);
+    transition: all 0.3s ease;
+}
+
+.contact-whatsapp-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-glow);
 }
