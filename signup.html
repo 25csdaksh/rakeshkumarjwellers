@@ -109,10 +109,19 @@
                 return;
             }
 
-            users.push({ name, email, password });
+            const newUser = { name, email, password };
+            users.push(newUser);
             localStorage.setItem("users", JSON.stringify(users));
-            alert("Registration successful! Redirecting to login page...");
-            window.location.href = "login.html";
+            
+            // Automatically log in the user
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("currentUser", JSON.stringify(newUser));
+            
+            alert(`Account created successfully! Welcome to Rakeshkumar Jewellers, ${name.split(" ")[0]}.`);
+            
+            const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
+            localStorage.removeItem("redirectAfterLogin");
+            window.location.href = redirectPage;
         });
     </script>
 

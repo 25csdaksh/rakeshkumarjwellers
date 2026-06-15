@@ -2,50 +2,50 @@
 
 :root {
     /* ========================================================
-       THEME COLOR COMBINATION - 60:25:15 ratio (Light Theme)
+       THEME COLOR COMBINATION - 60:30:10 ratio (Light Theme)
        ======================================================== */
     
     /* [60% Dominant Color] - Main Neutral Canvas / Body Background */
-    --bg-color: #FAF8F5; /* Warm Ivory canvas backdrop */
+    --bg-color: #F5F6F8; /* Alabaster Grey backdrop canvas */
     
-    /* [25% Secondary Color] - Containers, Headers, Text & Substructures */
-    --card-bg: #FFFFFF; /* White panels & cards */
-    --primary-color: #0E121A; /* Midnight black navigation frame */
-    --text-main: #1C1E24; /* Deep anthracite text color */
-    --text-light: #FAF8F5; /* Ivory text on dark panels */
-    --glass-bg: rgba(250, 248, 245, 0.85);
-    --shadow-color: rgba(0, 0, 0, 0.04);
+    /* [30% Secondary Color] - Containers, Headers, Text & Substructures */
+    --card-bg: #FFFFFF; /* High contrast panel base */
+    --primary-color: #0F172A; /* Slate Navy navigation structural block */
+    --text-main: #1E293B; /* Deep Slate text */
+    --text-light: #F8FAFC; /* White-slate text for navigation */
+    --glass-bg: rgba(245, 246, 248, 0.85);
+    --shadow-color: rgba(15, 23, 42, 0.04);
     
-    /* [15% Accent Color] - Action elements, active indicators & borders */
-    --accent-color: #C5A059; /* Metallic champagne gold accent */
+    /* [10% Accent Color] - Action elements, active indicators & borders */
+    --accent-color: #C5A059; /* Classic Champagne Gold accent */
     --accent-hover: #A8833F;
     --accent-glow: rgba(197, 160, 89, 0.25);
-    --border-color: rgba(197, 160, 89, 0.25);
-    --glass-border: rgba(197, 160, 89, 0.2);
+    --border-color: rgba(197, 160, 89, 0.22);
+    --glass-border: rgba(197, 160, 89, 0.18);
 }
 
 .dark-mode {
     /* ========================================================
-       THEME COLOR COMBINATION - 60:25:15 ratio (Dark Theme)
+       THEME COLOR COMBINATION - 60:30:10 ratio (Dark Theme)
        ======================================================== */
     
     /* [60% Dominant Color] - Main Neutral Canvas / Body Background */
-    --bg-color: #08090C; /* Deep obsidian space backdrop */
+    --bg-color: #06070B; /* Deep Carbon Obsidian canvas */
     
-    /* [25% Secondary Color] - Containers, Headers, Text & Substructures */
-    --card-bg: #111317; /* Dark charcoal panel background */
-    --primary-color: #08090C;
-    --text-main: #E5E7EB; /* Light silver main text color */
-    --text-light: #E5E7EB;
-    --glass-bg: rgba(8, 9, 12, 0.85);
-    --shadow-color: rgba(0, 0, 0, 0.45);
+    /* [30% Secondary Color] - Containers, Headers, Text & Substructures */
+    --card-bg: #12151E; /* Rich Slate-black panels & cards */
+    --primary-color: #06070B;
+    --text-main: #F1F5F9; /* Off-white Slate main text */
+    --text-light: #F1F5F9;
+    --glass-bg: rgba(6, 7, 11, 0.85);
+    --shadow-color: rgba(0, 0, 0, 0.5);
     
-    /* [15% Accent Color] - Action elements, active indicators & borders */
-    --accent-color: #D4AF37; /* Royal golden accents */
-    --accent-hover: #F3D268;
-    --accent-glow: rgba(212, 175, 55, 0.35);
-    --border-color: rgba(212, 175, 55, 0.25);
-    --glass-border: rgba(212, 175, 55, 0.15);
+    /* [10% Accent Color] - Action elements, active indicators & borders */
+    --accent-color: #E2B93C; /* Bright Amber Gold accent */
+    --accent-hover: #F6CE55;
+    --accent-glow: rgba(226, 185, 60, 0.3);
+    --border-color: rgba(226, 185, 60, 0.2);
+    --glass-border: rgba(226, 185, 60, 0.15);
 }
 
 body {
@@ -723,36 +723,325 @@ footer p {
 
 /* Responsive Overrides */
 @media (max-width: 768px) {
+    /* Header & Navigation Layout Overhaul */
+    .header {
+        padding: 60px 15px 15px 15px; /* Compact mobile spacing, leaving room for absolute buttons */
+    }
+
     .header h1 {
-        font-size: 2.3em;
+        font-size: 1.8em;
+        letter-spacing: 2px;
+        margin-top: 15px; /* Visual spacing for header content */
     }
+
+    .header p {
+        font-size: 0.75em;
+        letter-spacing: 2px;
+        margin-top: 5px;
+    }
+
+    /* Modern Glassmorphic Symmetrical Floating Back Button */
     .classy-back-btn {
-        position: static;
-        display: block;
-        margin: 20px auto;
-        width: fit-content;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        margin: 0;
+        padding: 8px 16px;
+        font-size: 0.7em;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        border-radius: 30px;
+        background: rgba(10, 14, 23, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--accent-color);
+        box-shadow: 0 4px 15px var(--accent-glow);
+        z-index: 100;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.3s ease;
     }
+
+    .classy-back-btn:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    /* Symmetric Theme Toggle */
+    .theme-toggle {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        margin: 0;
+        padding: 7px 12px;
+        font-size: 1em;
+        border-radius: 50%;
+        background: rgba(10, 14, 23, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--border-color);
+        z-index: 100;
+    }
+
+    /* Center-aligned Auth Nav below logo */
     .auth-nav {
         position: static;
+        display: flex;
         justify-content: center;
-        margin-bottom: 20px;
+        align-items: center;
+        gap: 10px;
+        margin: 15px auto 5px auto;
+        z-index: 10;
     }
-    .theme-toggle {
-        top: 20px;
-        right: 20px;
+
+    .auth-btn-small {
+        padding: 6px 14px;
+        font-size: 0.7em;
+        letter-spacing: 1px;
     }
+
+    /* Horizontal Touch Swipe-Friendly Navigation chips */
+    nav {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 5px 5px 12px 5px;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    nav::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+
+    nav a {
+        flex: 0 0 auto;
+        padding: 6px 12px;
+        font-size: 0.72em;
+        letter-spacing: 1px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+    nav a::after {
+        display: none; /* Remove line animation on mobile chips */
+    }
+
+    nav a:hover, nav a:active {
+        background: var(--accent-color);
+        color: var(--primary-color);
+        border-color: var(--accent-color);
+    }
+
+    /* Hero Section Overrides */
+    .hero {
+        padding: 80px 15px;
+        min-height: auto !important;
+    }
+
     .hero h2 {
-        font-size: 2.4em;
+        font-size: 2.1em;
+        letter-spacing: 1.5px;
+        line-height: 1.3;
     }
+
+    .hero p {
+        font-size: 0.85em;
+        letter-spacing: 2px;
+        margin: 15px 0 30px 0;
+    }
+
+    /* Touch-friendly Action Buttons */
+    .btn {
+        padding: 10px 24px;
+        font-size: 0.75em;
+        letter-spacing: 1.5px;
+        margin: 6px;
+    }
+
+    /* App-like 2-Column Product Grid */
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 10px;
+        margin-top: 25px;
+    }
+
+    /* Card Sizing and Margins for 2-column layout */
+    .card {
+        border-radius: 4px;
+    }
+
+    .card img {
+        height: 160px; /* Reduced height for 2-columns */
+    }
+
+    .card h3,
+    .card h4 {
+        font-size: 0.9em;
+        margin: 12px 0 6px 0;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        padding: 8px 12px 12px 12px;
+    }
+
+    /* Truncated card description */
+    .product-desc {
+        font-size: 0.7em;
+        line-height: 1.4;
+        height: 50px; /* Scaled down heights */
+        margin: 0 auto 12px auto;
+        -webkit-line-clamp: 3;
+    }
+
+    /* Touch-optimized Add to Cart button on Card */
+    .card-btn {
+        font-size: 0.7em;
+        padding: 9px 0;
+    }
+
+    /* Live Gold Rate Cards on Mobile */
     .rates {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
+        margin-top: 25px;
     }
+
     .rates p {
-        width: 80%;
+        width: 90%;
+        box-sizing: border-box;
+        padding: 18px 25px;
+        font-size: 1.4em;
     }
+
+    .rates p span {
+        font-size: 0.8em;
+    }
+
+    /* Image Gallery Slider */
     .slider {
-        height: 350px;
+        height: 280px;
+        margin: 20px auto;
+    }
+
+    /* Split Details Modal mobile design */
+    .modal-wrapper {
+        grid-template-columns: 1fr;
+        width: 92%;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    .modal-left {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        height: 220px;
+    }
+
+    .modal-product-img {
+        height: 100%;
+        max-height: 220px;
+        object-fit: contain;
+        background: #06070b;
+    }
+
+    .modal-right {
+        padding: 20px 20px 25px 20px;
+    }
+
+    .modal-product-title {
+        font-size: 1.5em;
+        margin-bottom: 3px;
+    }
+
+    .modal-product-spec {
+        font-size: 0.75em;
+        margin-bottom: 12px;
+    }
+
+    .modal-product-desc {
+        font-size: 0.8em;
+        margin-bottom: 15px;
+    }
+
+    .modal-spec-grid {
+        gap: 8px;
+        padding: 12px 0;
+        margin-bottom: 20px;
+    }
+
+    .modal-spec-item {
+        font-size: 0.75em;
+    }
+
+    .modal-cart-btn {
+        padding: 12px 0;
+        font-size: 0.75em;
+    }
+
+    .close {
+        font-size: 30px;
+        top: 8px;
+        right: 12px;
+    }
+
+    /* Form Inputs on Mobile */
+    form input,
+    form select {
+        width: 95%;
+        padding: 12px 14px;
+        margin: 10px auto;
+        font-size: 0.85em;
+    }
+
+    /* Appointment Section */
+    .section {
+        padding: 50px 15px;
+    }
+
+    .section h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    /* Contact Details Grid Mobile stack */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .contact-card {
+        padding: 25px 20px;
+    }
+
+    .contact-icon {
+        font-size: 1.8em;
+        margin-bottom: 12px;
+    }
+
+    .contact-card h3 {
+        font-size: 1.3em;
+    }
+
+    .contact-card p {
+        font-size: 0.85em;
+        margin-bottom: 15px;
+    }
+
+    .contact-link {
+        font-size: 0.95em;
     }
 }
 
