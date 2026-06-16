@@ -94,8 +94,12 @@
             const email = document.getElementById("loginEmail").value.trim().toLowerCase();
             const password = document.getElementById("loginPass").value;
 
+            const API_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+                ? "http://localhost:5000/login"
+                : "https://rakeshkumar-api.onrender.com/login";
+
             // Call Backend API
-            fetch("https://rakeshkumar-api.onrender.com/login", {
+            fetch(API_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
