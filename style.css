@@ -54,7 +54,7 @@
     --glass-border: rgba(226, 185, 60, 0.15);
     
     /* Luxury CSS Gradient Backgrounds (Dark Mode) */
-    --header-bg: linear-gradient(135deg, #11141c 0%, #06070b 100%);
+    --header-bg: radial-gradient(circle at 50% 100%, rgba(226, 185, 60, 0.08) 0%, rgba(6, 7, 11, 0) 70%), linear-gradient(135deg, #14161F 0%, #06070B 100%);
     --hero-bg: radial-gradient(circle at 50% 50%, rgba(226, 185, 60, 0.08) 0%, rgba(6, 7, 11, 0) 80%), linear-gradient(135deg, #0f1118 0%, #06070b 100%);
     --rate-bg: linear-gradient(135deg, #090b11 0%, #030406 100%);
     --appointment-bg: linear-gradient(135deg, #0f1118 0%, #06070b 100%);
