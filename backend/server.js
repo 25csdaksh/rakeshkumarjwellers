@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
 const app = express();
@@ -39,10 +40,13 @@ app.post("/signup", async (req, res) => {
       return res.status(400).json({ success: false, error: "An account with this email is already registered!" });
     }
 
+    // Hash the password securely
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const user = new User({
       name: name.trim(),
       email: email.toLowerCase().trim(),
-      password: password
+      password: hashedPassword
     });
 
     await user.save();
@@ -62,13 +66,15 @@ app.post("/login", async (req, res) => {
       return res.status(400).json({ success: false, error: "Email and password are required" });
     }
 
-    // Query both email and password for secure authentication
-    const user = await User.findOne({
-      email: email.toLowerCase().trim(),
-      password: password
-    });
-
+    // Find user by email
+    const user = await User.findOne({ email: email.toLowerCase().trim() });
     if (!user) {
+      return res.json({ success: false, error: "Invalid email or password" });
+    }
+
+    // Compare input password with hashed database password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
       return res.json({ success: false, error: "Invalid email or password" });
     }
 
