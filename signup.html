@@ -104,7 +104,7 @@
             }
 
             // Call Backend API
-            fetch("http://localhost:5000/api/signup", {
+            fetch("http://localhost:5000/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -118,15 +118,19 @@
                 return response.json();
             })
             .then(data => {
-                const newUser = { name, email };
-                localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("currentUser", JSON.stringify(newUser));
-                
-                alert(`Account created successfully! Welcome to Rakeshkumar Jewellers, ${name.split(" ")[0]}.`);
-                
-                const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
-                localStorage.removeItem("redirectAfterLogin");
-                window.location.href = redirectPage;
+                if (data.success) {
+                    const newUser = { name, email };
+                    localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("currentUser", JSON.stringify(newUser));
+                    
+                    alert(`Account created successfully! Welcome to Rakeshkumar Jewellers, ${name.split(" ")[0]}.`);
+                    
+                    const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
+                    localStorage.removeItem("redirectAfterLogin");
+                    window.location.href = redirectPage;
+                } else {
+                    alert(data.error || "Signup failed!");
+                }
             })
             .catch(error => {
                 alert(error.message);

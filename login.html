@@ -95,7 +95,7 @@
             const password = document.getElementById("loginPass").value;
 
             // Call Backend API
-            fetch("http://localhost:5000/api/login", {
+            fetch("http://localhost:5000/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -109,13 +109,17 @@
                 return response.json();
             })
             .then(data => {
-                localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("currentUser", JSON.stringify(data.user));
-                
-                alert("Login successful!");
-                const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
-                localStorage.removeItem("redirectAfterLogin");
-                window.location.href = redirectPage;
+                if (data.success) {
+                    localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("currentUser", JSON.stringify(data.user));
+                    
+                    alert("Login successful!");
+                    const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
+                    localStorage.removeItem("redirectAfterLogin");
+                    window.location.href = redirectPage;
+                } else {
+                    alert(data.error || "Invalid email or password!");
+                }
             })
             .catch(error => {
                 alert(error.message);
