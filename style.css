@@ -24,7 +24,7 @@
     --glass-border: rgba(197, 160, 89, 0.18);
     
     /* Luxury CSS Gradient Backgrounds */
-    --header-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --header-bg: linear-gradient(135deg, #FFFFFF 0%, #F5EFEB 100%);
     --hero-bg: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.08) 0%, rgba(15, 23, 42, 0) 80%), linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     --rate-bg: linear-gradient(135deg, #131924 0%, #0b0f17 100%);
     --appointment-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -83,21 +83,24 @@ body {
 .header h1 {
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 5px;
     font-size: 3.4em;
     text-transform: uppercase;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #FFE082 0%, #C5A059 50%, #8D6E63 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .header p {
     font-family: 'Inter', sans-serif;
     font-size: 0.9em;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin: 10px 0 0 0;
-    opacity: 0.85;
+    color: var(--text-main);
+    opacity: 0.8;
 }
 
 nav {
@@ -109,7 +112,7 @@ nav {
 }
 
 nav a {
-    color: var(--text-light);
+    color: var(--text-main);
     text-decoration: none;
     font-size: 0.85em;
     font-weight: 500;
@@ -156,7 +159,7 @@ nav a:hover::after {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    background: rgba(10, 14, 23, 0.25);
+    background: var(--glass-bg);
     backdrop-filter: blur(10px);
     border-radius: 50px;
     display: inline-flex;
@@ -195,7 +198,7 @@ nav a:hover::after {
     font-size: 0.8em;
     font-weight: 500;
     transition: all 0.3s ease;
-    background: rgba(10, 14, 23, 0.4);
+    background: var(--glass-bg);
     backdrop-filter: blur(8px);
 }
 
@@ -512,7 +515,7 @@ form select:focus {
     position: absolute;
     top: 35px;
     right: 40px;
-    background: rgba(10, 14, 23, 0.4);
+    background: var(--card-bg);
     backdrop-filter: blur(8px);
     border: 1px solid var(--border-color);
     color: var(--accent-color);
@@ -793,7 +796,7 @@ footer p {
         font-weight: 600;
         letter-spacing: 1.5px;
         border-radius: 30px;
-        background: rgba(10, 14, 23, 0.5);
+        background: var(--glass-bg);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid var(--accent-color);
@@ -819,10 +822,6 @@ footer p {
         padding: 7px 12px;
         font-size: 1em;
         border-radius: 50%;
-        background: rgba(10, 14, 23, 0.5);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid var(--border-color);
         z-index: 100;
     }
 
