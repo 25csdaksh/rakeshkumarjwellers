@@ -73,8 +73,8 @@ app.post("/login", async (req, res) => {
     }
 
     // Compare input password with hashed database password
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
       return res.json({ success: false, error: "Invalid email or password" });
     }
 
