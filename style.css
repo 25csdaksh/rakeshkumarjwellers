@@ -1237,3 +1237,107 @@ footer p {
     background: var(--accent-color);
     color: var(--primary-color) !important;
 }
+
+/* Premium Glassmorphic Custom Alert Modal Overlay */
+.custom-alert-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(6, 7, 11, 0.6); /* Semi-transparent obsidian dark backdrop */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 10000; /* Must overlay product details modal (z-index 1000) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeIn 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.custom-alert-wrapper {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px var(--shadow-color), 0 0 25px var(--accent-glow);
+    border-radius: 4px; /* Matches style.css card border-radius: 4px */
+    padding: 35px 30px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    animation: zoomIn 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.custom-alert-wrapper h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7em;
+    font-weight: 500;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+}
+
+.custom-alert-wrapper p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+    opacity: 0.85;
+}
+
+.custom-alert-btn {
+    width: 100%;
+    max-width: 180px;
+    padding: 12px 0;
+    font-size: 0.75em;
+    letter-spacing: 1.5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--accent-color);
+    background: transparent;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.custom-alert-btn:hover {
+    background: var(--accent-color);
+    color: var(--primary-color) !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.92);
+        opacity: 0;
+    }
+}
