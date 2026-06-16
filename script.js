@@ -1,3 +1,50 @@
+// Custom Premium Alert Modal Override
+window.alert = function(message, callback) {
+    const alertModal = document.createElement("div");
+    alertModal.className = "custom-alert-modal";
+    
+    const modalWrapper = document.createElement("div");
+    modalWrapper.className = "custom-alert-wrapper";
+    
+    const title = document.createElement("h3");
+    title.innerText = "Rakeshkumar Jewellers";
+    
+    const content = document.createElement("p");
+    content.innerText = message;
+    
+    const btn = document.createElement("button");
+    btn.className = "btn gold custom-alert-btn";
+    btn.innerText = "OK";
+    
+    modalWrapper.appendChild(title);
+    modalWrapper.appendChild(content);
+    modalWrapper.appendChild(btn);
+    alertModal.appendChild(modalWrapper);
+    document.body.appendChild(alertModal);
+    
+    const closeAlert = () => {
+        alertModal.style.animation = "fadeOut 0.25s ease forwards";
+        modalWrapper.style.animation = "zoomOut 0.25s ease forwards";
+        setTimeout(() => {
+            alertModal.remove();
+            if (typeof callback === "function") {
+                callback();
+            }
+        }, 250);
+    };
+
+    btn.onclick = closeAlert;
+    
+    const handleKeydown = function(e) {
+        if (e.key === "Enter" || e.key === "Escape") {
+            e.preventDefault();
+            closeAlert();
+            document.removeEventListener("keydown", handleKeydown);
+        }
+    };
+    document.addEventListener("keydown", handleKeydown);
+};
+
 // Dummy Gold Rate (replace with real API later)
 const setInitialGoldRate = () => {
     if (document.getElementById("gold24")) {
@@ -86,8 +133,9 @@ function checkAuth() {
     if (protectedPages.includes(page)) {
         if (localStorage.getItem("isLoggedIn") !== "true") {
             localStorage.setItem("redirectAfterLogin", page);
-            alert("Please Login or Sign Up to view the premium items in this collection!");
-            window.location.href = "login.html";
+            alert("Please Login or Sign Up to view the premium items in this collection!", () => {
+                window.location.href = "login.html";
+            });
         }
     }
 }
@@ -123,14 +171,16 @@ function logout(event) {
     if (event) event.preventDefault();
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("currentUser");
-    alert("You have logged out successfully!");
-    window.location.href = "index.html";
+    alert("You have logged out successfully!", () => {
+        window.location.href = "index.html";
+    });
 }
 
 function addToCart(title, img, desc) {
     if (localStorage.getItem("isLoggedIn") !== "true") {
-        alert("Please Login to add items to your cart!");
-        window.location.href = "login.html";
+        alert("Please Login to add items to your cart!", () => {
+            window.location.href = "login.html";
+        });
         return;
     }
     const currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");

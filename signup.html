@@ -123,11 +123,11 @@
                     localStorage.setItem("isLoggedIn", "true");
                     localStorage.setItem("currentUser", JSON.stringify(newUser));
                     
-                    alert(`Account created successfully! Welcome to Rakeshkumar Jewellers, ${name.split(" ")[0]}.`);
-                    
-                    const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
-                    localStorage.removeItem("redirectAfterLogin");
-                    window.location.href = redirectPage;
+                    alert(`Account created successfully! Welcome to Rakeshkumar Jewellers, ${name.split(" ")[0]}.`, () => {
+                        const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
+                        localStorage.removeItem("redirectAfterLogin");
+                        window.location.href = redirectPage;
+                    });
                 } else {
                     alert(data.error || "Signup failed!");
                 }

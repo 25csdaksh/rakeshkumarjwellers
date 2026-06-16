@@ -193,8 +193,9 @@
     <script>
         // Check if user is logged in
         if (localStorage.getItem("isLoggedIn") !== "true") {
-            alert("Please login to access your profile!");
-            window.location.href = "login.html";
+            alert("Please login to access your profile!", () => {
+                window.location.href = "login.html";
+            });
         } else {
             // Load user profile details
             const user = JSON.parse(localStorage.getItem("currentUser") || "{}");

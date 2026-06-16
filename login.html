@@ -113,10 +113,11 @@
                     localStorage.setItem("isLoggedIn", "true");
                     localStorage.setItem("currentUser", JSON.stringify(data.user));
                     
-                    alert("Login successful!");
-                    const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
-                    localStorage.removeItem("redirectAfterLogin");
-                    window.location.href = redirectPage;
+                    alert("Login successful!", () => {
+                        const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
+                        localStorage.removeItem("redirectAfterLogin");
+                        window.location.href = redirectPage;
+                    });
                 } else {
                     alert(data.error || "Invalid email or password!");
                 }
