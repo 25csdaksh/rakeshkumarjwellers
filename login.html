@@ -94,19 +94,32 @@
             const email = document.getElementById("loginEmail").value.trim().toLowerCase();
             const password = document.getElementById("loginPass").value;
 
-            const users = JSON.parse(localStorage.getItem("users") || "[]");
-            const user = users.find(u => u.email === email && u.password === password);
-
-            if (user) {
+            // Call Backend API
+            fetch("http://localhost:5000/api/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => { throw new Error(err.error || "Login failed"); });
+                }
+                return response.json();
+            })
+            .then(data => {
                 localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("currentUser", JSON.stringify(user));
+                localStorage.setItem("currentUser", JSON.stringify(data.user));
+                
                 alert("Login successful!");
                 const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
                 localStorage.removeItem("redirectAfterLogin");
                 window.location.href = redirectPage;
-            } else {
-                alert("Invalid email or password!");
-            }
+            })
+            .catch(error => {
+                alert(error.message);
+            });
         });
     </script>
 

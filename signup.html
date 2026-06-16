@@ -103,25 +103,34 @@
                 return;
             }
 
-            const users = JSON.parse(localStorage.getItem("users") || "[]");
-            if (users.some(user => user.email === email)) {
-                alert("An account with this email is already registered!");
-                return;
-            }
-
-            const newUser = { name, email, password };
-            users.push(newUser);
-            localStorage.setItem("users", JSON.stringify(users));
-            
-            // Automatically log in the user
-            localStorage.setItem("isLoggedIn", "true");
-            localStorage.setItem("currentUser", JSON.stringify(newUser));
-            
-            alert(`Account created successfully! Welcome to Rakeshkumar Jewellers, ${name.split(" ")[0]}.`);
-            
-            const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
-            localStorage.removeItem("redirectAfterLogin");
-            window.location.href = redirectPage;
+            // Call Backend API
+            fetch("http://localhost:5000/api/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ name, email, password })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => { throw new Error(err.error || "Signup failed"); });
+                }
+                return response.json();
+            })
+            .then(data => {
+                const newUser = { name, email };
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("currentUser", JSON.stringify(newUser));
+                
+                alert(`Account created successfully! Welcome to Rakeshkumar Jewellers, ${name.split(" ")[0]}.`);
+                
+                const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
+                localStorage.removeItem("redirectAfterLogin");
+                window.location.href = redirectPage;
+            })
+            .catch(error => {
+                alert(error.message);
+            });
         });
     </script>
 
