@@ -94,25 +94,42 @@
             const email = document.getElementById("loginEmail").value.trim().toLowerCase();
             const password = document.getElementById("loginPass").value;
 
-            // Retrieve existing users list from localStorage
-            const users = JSON.parse(localStorage.getItem("users") || "[]");
+            const API_URL = window.location.hostname === "localhost" || 
+                            window.location.hostname === "127.0.0.1" || 
+                            window.location.protocol === "file:"
+                ? "http://localhost:5000/login"
+                : "https://rakeshkumar-api.onrender.com/login";
 
-            // Find user by email and match password
-            const user = users.find(u => u.email === email && u.password === password);
-
-            if (!user) {
-                alert("Invalid email or password!");
-                return;
-            }
-
-            // Set login sessions
-            localStorage.setItem("isLoggedIn", "true");
-            localStorage.setItem("currentUser", JSON.stringify({ name: user.name, email: user.email }));
-
-            alert("Login successful!", () => {
-                const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
-                localStorage.removeItem("redirectAfterLogin");
-                window.location.href = redirectPage;
+            // Call Backend API
+            fetch(API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => { throw new Error(err.error || "Login failed"); });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("currentUser", JSON.stringify(data.user));
+                    
+                    alert("Login successful!", () => {
+                        const redirectPage = localStorage.getItem("redirectAfterLogin") || "index.html";
+                        localStorage.removeItem("redirectAfterLogin");
+                        window.location.href = redirectPage;
+                    });
+                } else {
+                    alert(data.error || "Invalid email or password!");
+                }
+            })
+            .catch(error => {
+                alert(error.message);
             });
         });
     </script>
