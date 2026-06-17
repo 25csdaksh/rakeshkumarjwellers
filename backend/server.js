@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
+const dns = require("dns");
+dns.setDefaultResultOrder("ipv4first");
 require("dotenv").config();
 
 const app = express();
