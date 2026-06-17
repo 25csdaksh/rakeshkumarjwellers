@@ -4,7 +4,7 @@ const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const dns = require("dns");
 dns.setDefaultResultOrder("ipv4first");
-require("dotenv").config();
+require("dotenv").config({ path: require("path").join(__dirname, ".env") });
 
 const app = express();
 const PORT = process.env.PORT || 5000;

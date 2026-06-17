@@ -1,0 +1,9 @@
+{
+  "name": "rakeshkumar-jewellers",
+  "version": "1.0.0",
+  "description": "Root configuration for Rakeshkumar Jewellers",
+  "scripts": {
+    "install": "npm install --prefix backend",
+    "start": "node backend/server.js"
+  }
+}
