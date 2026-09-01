@@ -2410,9 +2410,11 @@ footer p {
 }
 
 .luxe-prod-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4em;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82em;
     font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
     color: var(--brand-burgundy);
     margin: 0 0 16px 0;
 }
