@@ -3048,31 +3048,45 @@ footer p {
 
 .bullet-gold { color: #C5A059; }
 
-/* Door Opening Animation States */
+/* Door Opening Animation States (Smooth Realistic 3D Opening) */
 .royal-door-loader.opened .panel-left-3d {
-    transform: rotateY(-80deg) translateX(-20%);
+    transform: rotateY(-95deg) translateX(-80%);
     opacity: 0;
+    transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.2s ease;
 }
 
 .royal-door-loader.opened .panel-right-3d {
-    transform: rotateY(80deg) translateX(20%);
+    transform: rotateY(95deg) translateX(80%);
     opacity: 0;
+    transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.2s ease;
 }
 
-.royal-door-loader.opened .entrance-bottom-footer {
+.royal-door-loader.opened .wood-door-left {
+    transform: rotateY(-90deg);
+    transition: transform 1.4s ease;
+}
+
+.royal-door-loader.opened .wood-door-right {
+    transform: rotateY(90deg);
+    transition: transform 1.4s ease;
+}
+
+.royal-door-loader.opened .entrance-bottom-footer,
+.royal-door-loader.opened .entrance-top-header {
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.5s ease;
+    transition: all 0.6s ease;
 }
 
 .royal-door-loader.opened .showcase-3d-niche {
-    transform: scale(1.15);
-    transition: transform 1.5s ease;
+    transform: scale(1.25);
+    transition: transform 1.6s ease;
 }
 
 .royal-door-loader.fade-out {
     opacity: 0;
     pointer-events: none;
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* Mobile & Tablet Responsive Layout */
