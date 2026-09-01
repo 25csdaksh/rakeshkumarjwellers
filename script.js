@@ -329,21 +329,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // STYLISH SCROLL ANIMATION & INTERACTIVITY SUITE
     // ========================================================
     
-    // 0. Royal Grand Door Opening Entrance Animation
+    // 0. Royal Boutique Entrance Controller
     const doorLoader = document.getElementById("royal-door-loader");
     if (doorLoader) {
         document.body.style.overflow = "hidden";
-        setTimeout(() => {
-            doorLoader.classList.add("opened");
-            setTimeout(() => {
-                doorLoader.classList.add("fade-out");
-                document.body.style.overflow = "";
-                setTimeout(() => {
-                    doorLoader.style.display = "none";
-                }, 600);
-            }, 1600);
-        }, 1200);
     }
+
+// Global Door Opening Trigger Function
+function openRoyalDoors() {
+    const doorLoader = document.getElementById("royal-door-loader");
+    if (!doorLoader || doorLoader.classList.contains("opened")) return;
+    
+    doorLoader.classList.add("opened");
+    
+    setTimeout(() => {
+        doorLoader.classList.add("fade-out");
+        document.body.style.overflow = "";
+        setTimeout(() => {
+            doorLoader.style.display = "none";
+        }, 800);
+    }, 1400);
+}
+
+// Accessibility: Allow keyboard Enter or Space to open doors
+document.addEventListener("keydown", (e) => {
+    const doorLoader = document.getElementById("royal-door-loader");
+    if (doorLoader && doorLoader.style.display !== "none" && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        openRoyalDoors();
+    }
+});
     
     // 1. Inject Top Scroll Progress Bar if missing
     if (!document.getElementById("scroll-progress")) {

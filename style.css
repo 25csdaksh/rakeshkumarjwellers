@@ -2590,7 +2590,7 @@ footer p {
 }
 
 /* ========================================================
-   ROYAL GRAND DOOR ENTRANCE ANIMATION
+   HIGH-END LUXURY JEWELLERY BOUTIQUE ENTRANCE (SPLASH)
    ======================================================== */
 .royal-door-loader {
     position: fixed;
@@ -2599,153 +2599,416 @@ footer p {
     width: 100vw;
     height: 100vh;
     z-index: 999999;
-    perspective: 1500px;
+    perspective: 1600px;
     overflow: hidden;
-    pointer-events: auto;
-    background: #0D0306;
+    background: radial-gradient(circle at 50% 40%, #240E14 0%, #120508 60%, #080204 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* Center Jewellery Showcase Pedestal */
+.door-center-showcase {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 480px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.showcase-pedestal-light {
+    position: absolute;
+    top: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 224, 130, 0.25) 0%, rgba(197, 160, 89, 0.08) 45%, rgba(0, 0, 0, 0) 75%);
+    border-radius: 50%;
+    filter: blur(25px);
+    animation: spotlightPulse 3s infinite alternate ease-in-out;
+}
+
+@keyframes spotlightPulse {
+    0% { opacity: 0.7; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1.08); }
+}
+
+.showcase-display-cabinet {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    background: rgba(18, 5, 8, 0.75);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), inset 0 0 30px rgba(197, 160, 89, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.showcase-jewellery-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.8));
+    animation: floatJewel 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatJewel {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+}
+
+/* Heavy Wood & Gold Boutique Doors */
 .royal-door {
     width: 50vw;
     height: 100vh;
     position: absolute;
     top: 0;
-    background: linear-gradient(135deg, #2E0F17 0%, #3D131D 50%, #1D070C 100%);
+    background: linear-gradient(135deg, #1C0A0E 0%, #2A0F15 40%, #150608 100%);
     box-sizing: border-box;
-    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.95);
     transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px;
+}
+
+.royal-door::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(197, 160, 89, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .royal-door-left {
     left: 0;
     transform-origin: left center;
-    border-right: 2px solid var(--accent-gold);
+    border-right: 2px solid rgba(197, 160, 89, 0.6);
 }
 
 .royal-door-right {
     right: 0;
     transform-origin: right center;
-    border-left: 2px solid var(--accent-gold);
+    border-left: 2px solid rgba(197, 160, 89, 0.6);
 }
 
-/* Door Ornaments & Carvings */
-.door-panel-inner {
-    width: 75%;
-    height: 80%;
-    border: 2px solid rgba(197, 160, 89, 0.35);
-    border-radius: 8px;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(197, 160, 89, 0.15);
+/* Door Corner Brackets & Frames */
+.door-gold-frame {
+    width: 82%;
+    height: 82%;
+    max-width: 480px;
+    max-height: 650px;
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    position: relative;
+    padding: 35px 25px;
+    box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    background: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.05) 0%, rgba(0, 0, 0, 0) 80%);
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
-.door-carving {
-    font-size: 3.5em;
-    opacity: 0.35;
-    color: var(--accent-gold);
+.door-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: #C5A059;
+    border-style: solid;
 }
+
+.corner-tl { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+.corner-tr { top: -2px; right: -2px; border-width: 2px 2px 0 0; }
+.corner-bl { bottom: -2px; left: -2px; border-width: 0 0 2px 2px; }
+.corner-br { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
 
 .door-handle {
     position: absolute;
     top: 50%;
-    width: 16px;
-    height: 75px;
+    width: 14px;
+    height: 85px;
     background: linear-gradient(180deg, #FFE082 0%, #C5A059 50%, #8A651E 100%);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(197, 160, 89, 0.6), 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.6), 0 4px 15px rgba(0, 0, 0, 0.8);
     transform: translateY(-50%);
+    z-index: 3;
 }
 
-.door-handle-left {
-    right: 12px;
-}
+.door-handle-left { right: 10px; }
+.door-handle-right { left: 10px; }
 
-.door-handle-right {
-    left: 12px;
-}
-
-/* Center Emblem */
-.royal-door-center-emblem {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
+/* Left Door Content */
+.door-content-wrapper {
     text-align: center;
-    background: radial-gradient(circle, #3D131D 0%, #1A070B 90%);
-    border: 2px solid var(--accent-gold);
-    padding: 35px 45px;
-    border-radius: 50px;
-    box-shadow: 0 0 50px rgba(197, 160, 89, 0.5), inset 0 0 25px rgba(0, 0, 0, 0.8);
-    transition: all 0.8s ease;
-    width: 85%;
-    max-width: 520px;
+    color: #FFFFFF;
+    width: 100%;
 }
 
-.emblem-crown {
-    font-size: 2.5em;
-    margin-bottom: 8px;
-    animation: crownGlow 2s infinite alternate;
+.brand-monogram-crest {
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
 }
 
-@keyframes crownGlow {
-    0% { transform: scale(1); filter: drop-shadow(0 0 5px #FFE082); }
-    100% { transform: scale(1.1); filter: drop-shadow(0 0 20px #FFE082); }
+.crest-crown-svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto 6px auto;
+    filter: drop-shadow(0 0 8px rgba(255, 224, 130, 0.5));
 }
 
-.emblem-title {
+.monogram-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid #C5A059;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, rgba(0,0,0,0.4) 100%);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+.monogram-circle span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #FFE082;
+    line-height: 1;
+}
+
+.door-brand-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.2em;
     font-weight: 700;
     letter-spacing: 3px;
     color: #FFE082;
-    margin: 0 0 8px 0;
+    margin: 0;
     text-transform: uppercase;
     line-height: 1.1;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
-.emblem-gold-line {
+.door-brand-sub-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #F8E7D2;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.door-gold-divider {
     width: 90px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #FFE082, transparent);
-    margin: 10px auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C5A059, transparent);
+    margin: 18px auto;
 }
 
-.emblem-sub {
+.door-tagline {
     font-family: 'Inter', sans-serif;
     font-size: 0.72em;
     font-weight: 600;
     letter-spacing: 2.5px;
-    color: #F8E7D2;
-    margin: 0;
+    color: #C5A059;
     text-transform: uppercase;
+    margin: 0;
     opacity: 0.9;
 }
 
-/* Door Opened State */
+/* Right Door Content */
+.door-message-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #FFE082;
+    margin: 0 0 10px 0;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.door-highlights-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #F8E7D2;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.h-icon {
+    width: 18px;
+    height: 18px;
+    color: #C5A059;
+    flex-shrink: 0;
+}
+
+/* Bottom CTA Container */
+.door-cta-container {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    text-align: center;
+}
+
+.door-cta-btn {
+    background: rgba(18, 5, 8, 0.85);
+    color: #FFE082;
+    border: 1px solid #C5A059;
+    padding: 15px 42px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 0 25px rgba(197, 160, 89, 0.25), 0 8px 30px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    outline: none;
+}
+
+.door-cta-btn:hover, .door-cta-btn:focus {
+    background: #C5A059;
+    color: #120508;
+    box-shadow: 0 0 35px rgba(197, 160, 89, 0.6), 0 12px 35px rgba(0, 0, 0, 0.8);
+    transform: translateY(-3px);
+}
+
+.cta-arrow {
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+.door-cta-btn:hover .cta-arrow {
+    transform: translateX(4px);
+}
+
+.cta-bottom-flourish {
+    margin-top: 12px;
+    font-size: 0.72em;
+    color: #C5A059;
+    opacity: 0.6;
+    letter-spacing: 4px;
+}
+
+/* Door Opening Animation Triggered States */
 .royal-door-loader.opened .royal-door-left {
-    transform: rotateY(-105deg);
+    transform: rotateY(-85deg) translateX(-10%);
 }
 
 .royal-door-loader.opened .royal-door-right {
-    transform: rotateY(105deg);
+    transform: rotateY(85deg) translateX(10%);
 }
 
-.royal-door-loader.opened .royal-door-center-emblem {
+.royal-door-loader.opened .door-cta-container {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, 20px);
+    transition: all 0.5s ease;
+}
+
+.royal-door-loader.opened .door-center-showcase {
+    transform: translate(-50%, -50%) scale(1.12);
+    transition: transform 1.6s ease;
 }
 
 .royal-door-loader.fade-out {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.6s ease;
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .royal-door, .showcase-jewellery-img, .showcase-pedestal-light, .door-cta-btn {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Responsive Styles for Mobile & Tablet */
+@media (max-width: 900px) {
+    .royal-door-loader {
+        flex-direction: column;
+    }
+    .royal-door {
+        width: 100vw;
+        height: 50vh;
+        padding: 20px;
+    }
+    .royal-door-left {
+        top: 0;
+        transform-origin: top center;
+        border-right: none;
+        border-bottom: 1px solid rgba(197, 160, 89, 0.6);
+    }
+    .royal-door-right {
+        bottom: 0;
+        top: auto;
+        transform-origin: bottom center;
+        border-left: none;
+        border-top: 1px solid rgba(197, 160, 89, 0.6);
+    }
+    .royal-door-loader.opened .royal-door-left {
+        transform: rotateX(85deg) translateY(-10%);
+    }
+    .royal-door-loader.opened .royal-door-right {
+        transform: rotateX(-85deg) translateY(10%);
+    }
+    .door-gold-frame {
+        width: 90%;
+        height: 88%;
+        padding: 15px;
+    }
+    .door-brand-title {
+        font-size: 1.6em;
+    }
+    .door-message-title {
+        font-size: 1.2em;
+    }
+    .door-highlights-list {
+        gap: 8px;
+    }
+    .door-cta-btn {
+        padding: 12px 28px;
+        font-size: 0.7em;
+    }
 }

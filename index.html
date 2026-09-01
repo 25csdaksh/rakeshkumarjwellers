@@ -10,27 +10,85 @@
 
 <body>
 
-    <!-- Royal Grand Door Entrance Preloader -->
+    <!-- Luxury Boutique Entrance Overlay -->
     <div id="royal-door-loader" class="royal-door-loader">
+        <!-- Center Illuminated Jewellery Showcase (Behind Doors) -->
+        <div class="door-center-showcase">
+            <div class="showcase-pedestal-light"></div>
+            <div class="showcase-display-cabinet">
+                <img src="./assets/add/rajasthani haar.png" alt="Royal Rajasthani Gold Haar Display" class="showcase-jewellery-img">
+            </div>
+        </div>
+
+        <!-- Left Boutique Door Panel -->
         <div class="royal-door royal-door-left">
-            <div class="door-panel-inner">
-                <div class="door-carving">✨</div>
+            <div class="door-gold-frame">
+                <div class="door-corner corner-tl"></div>
+                <div class="door-corner corner-tr"></div>
+                <div class="door-corner corner-bl"></div>
+                <div class="door-corner corner-br"></div>
+                
+                <div class="door-content-wrapper">
+                    <div class="brand-monogram-crest">
+                        <svg class="crest-crown-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M2 18h20L19 8l-5 5-2-7-2 7-5-5L2 18z" fill="#FFE082" stroke="none"/>
+                        </svg>
+                        <div class="monogram-circle">
+                            <span>R</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="door-brand-title">RAKESH KUMAR</h1>
+                    <div class="door-brand-sub-title">JEWELLERS</div>
+                    <div class="door-gold-divider"></div>
+                    <p class="door-tagline">PATAN • PURE GOLD & DIAMOND HERITAGE</p>
+                </div>
             </div>
             <div class="door-handle door-handle-left"></div>
         </div>
-        
+
+        <!-- Right Boutique Door Panel -->
         <div class="royal-door royal-door-right">
-            <div class="door-panel-inner">
-                <div class="door-carving">✨</div>
+            <div class="door-gold-frame">
+                <div class="door-corner corner-tl"></div>
+                <div class="door-corner corner-tr"></div>
+                <div class="door-corner corner-bl"></div>
+                <div class="door-corner corner-br"></div>
+                
+                <div class="door-content-wrapper">
+                    <h2 class="door-message-title">TIMELESS BEAUTY.<br>TRUSTED FOREVER.</h2>
+                    <div class="door-gold-divider"></div>
+                    
+                    <div class="door-highlights-list">
+                        <div class="highlight-item">
+                            <svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
+                            <span>EXQUISITE DESIGNS</span>
+                        </div>
+                        <div class="highlight-item">
+                            <svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+                            <span>TRUSTED LEGACY</span>
+                        </div>
+                        <div class="highlight-item">
+                            <svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h12l4 6-10 12L2 9z"/></svg>
+                            <span>100% PURITY ASSURED</span>
+                        </div>
+                        <div class="highlight-item">
+                            <svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
+                            <span>CRAFTED WITH CARE</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="door-handle door-handle-right"></div>
         </div>
-        
-        <div class="royal-door-center-emblem" id="doorCenterEmblem">
-            <div class="emblem-crown">👑</div>
-            <h1 class="emblem-title">RAKESHKUMAR JEWELLERS</h1>
-            <div class="emblem-gold-line"></div>
-            <p class="emblem-sub">PATAN • PURE GOLD & DIAMOND HERITAGE</p>
+
+        <!-- Bottom CTA Experience Trigger -->
+        <div class="door-cta-container">
+            <button id="enterExperienceBtn" class="door-cta-btn" onclick="openRoyalDoors()" aria-label="Enter Collection Experience">
+                <span>ENTER COLLECTION</span>
+                <span class="cta-arrow">→</span>
+            </button>
+            <div class="cta-bottom-flourish">❖ ─── ✦ ─── ❖</div>
         </div>
     </div>
 
