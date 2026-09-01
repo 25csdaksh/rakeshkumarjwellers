@@ -337,4 +337,130 @@ document.addEventListener('DOMContentLoaded', () => {
             wrapper.appendChild(p);
         }
     });
+
+    // ========================================================
+    // STYLISH SCROLL ANIMATION & INTERACTIVITY SUITE
+    // ========================================================
+    
+    // 1. Inject Top Scroll Progress Bar if missing
+    if (!document.getElementById("scroll-progress")) {
+        const progressBar = document.createElement("div");
+        progressBar.id = "scroll-progress";
+        document.body.prepend(progressBar);
+    }
+
+    // 2. Inject Back-To-Top Button if missing
+    if (!document.getElementById("backToTop")) {
+        const bttBtn = document.createElement("div");
+        bttBtn.id = "backToTop";
+        bttBtn.setAttribute("title", "Scroll to Top");
+        bttBtn.innerHTML = `
+            <svg class="progress-ring" width="50" height="50">
+                <circle cx="25" cy="25" r="23"/>
+            </svg>
+            <span class="top-arrow-icon">↑</span>
+        `;
+        document.body.appendChild(bttBtn);
+
+        bttBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    const scrollProgressEl = document.getElementById("scroll-progress");
+    const backToTopBtn = document.getElementById("backToTop");
+    const circle = backToTopBtn ? backToTopBtn.querySelector("circle") : null;
+    const header = document.querySelector(".header");
+
+    const updateScrollState = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+        // Update Top Progress Bar
+        if (scrollProgressEl) {
+            scrollProgressEl.style.width = `${scrollPercent}%`;
+        }
+
+        // Update Back to Top Button visibility & SVG ring
+        if (backToTopBtn) {
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add("show");
+            } else {
+                backToTopBtn.classList.remove("show");
+            }
+
+            if (circle) {
+                const circumference = 2 * Math.PI * 23; // r = 23 -> 144.5
+                const offset = circumference - (scrollPercent / 100) * circumference;
+                circle.style.strokeDasharray = `${circumference}`;
+                circle.style.strokeDashoffset = `${offset}`;
+            }
+        }
+
+        // Sticky Navbar Toggle
+        if (header) {
+            if (scrollTop > 80) {
+                header.classList.add("sticky-nav");
+            } else {
+                header.classList.remove("sticky-nav");
+            }
+        }
+    };
+
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    updateScrollState();
+
+    // 3. Intersection Observer for Scroll Reveals
+    const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale");
+    
+    if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    // Optionally unobserve if we only want animate once
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    }
+
+    // 4. Animated Number Counters on Scroll
+    const statNumbers = document.querySelectorAll(".stat-number");
+    if (statNumbers.length > 0) {
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const targetVal = parseInt(el.getAttribute("data-target"), 10);
+                    const suffix = el.getAttribute("data-suffix") || "";
+                    if (!isNaN(targetVal) && !el.classList.contains("counted")) {
+                        el.classList.add("counted");
+                        let current = 0;
+                        const duration = 2000;
+                        const stepTime = 20;
+                        const increment = Math.max(1, Math.ceil(targetVal / (duration / stepTime)));
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= targetVal) {
+                                current = targetVal;
+                                clearInterval(timer);
+                            }
+                            el.innerText = `${current.toLocaleString()}${suffix}`;
+                        }, stepTime);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(stat => counterObserver.observe(stat));
+    }
 });
+

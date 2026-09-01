@@ -69,6 +69,284 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================================
+   STYLISH SCROLL PROGRESS & ANIMATION ENGINE
+   ======================================================== */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #C5A059 0%, #FFE082 50%, #E2B93C 100%);
+    box-shadow: 0 0 10px rgba(226, 185, 60, 0.8);
+    z-index: 10005;
+    transition: width 0.1s ease-out;
+}
+
+/* Scroll Reveal Base Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active,
+.reveal-scale.active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* Sticky Glassmorphic Header on Scroll */
+.header {
+    transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+}
+
+.header.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    padding: 15px 20px;
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 1px 0 var(--border-color);
+}
+
+.header.sticky-nav h1 {
+    font-size: 2.2em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header.sticky-nav p {
+    display: none;
+}
+
+.header.sticky-nav nav {
+    margin-top: 10px;
+}
+
+/* Dynamic Card Shimmer & 3D Hover */
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.75s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.card:hover::before {
+    left: 140%;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 40px var(--accent-glow), 0 0 1px var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Luxury Animated Stats Counters Section */
+.stats-section {
+    background: var(--rate-bg);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 70px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 30px auto 0 auto;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 30px 20px;
+    transition: all 0.4s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2em;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #FFE082 0%, #C5A059 50%, #E2B93C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    opacity: 0.85;
+}
+
+/* Hero Scroll Down Indicator */
+.scroll-down-indicator {
+    margin-top: 50px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-down-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-down-arrow {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: var(--accent-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(10px); }
+    60% { transform: translateY(5px); }
+}
+
+/* Floating Back to Top Button with Circular Progress */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9990;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.8);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease, border-color 0.3s ease;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+#backToTop:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px var(--accent-glow);
+    transform: translateY(-4px) scale(1.05);
+}
+
+#backToTop svg.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+
+#backToTop circle {
+    fill: transparent;
+    stroke: var(--accent-color);
+    stroke-width: 2.5;
+    stroke-dasharray: 145;
+    stroke-dashoffset: 145;
+    transition: stroke-dashoffset 0.1s linear;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.top-arrow-icon {
+    font-size: 1.2em;
+    color: var(--accent-color);
+}
+
 /* Header & Navigation */
 .header {
     background: var(--header-bg);
