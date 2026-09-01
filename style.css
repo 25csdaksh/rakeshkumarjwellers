@@ -2,31 +2,59 @@
 
 :root {
     /* ========================================================
-       THEME COLOR COMBINATION - 60:30:10 ratio (Light Theme)
+       LUXEORA LUXURY COLOR PALETTE - Light Theme
        ======================================================== */
+    --brand-burgundy: #3D131D; /* Royal Deep Burgundy */
+    --brand-burgundy-hover: #2E0F17;
+    --brand-burgundy-gold: #5E1F2D;
     
-    /* [60% Dominant Color] - Main Neutral Canvas / Body Background */
-    --bg-color: #FAF8F5; /* Warm Ivory Alabaster backdrop canvas */
+    --bg-color: #FAF6F0; /* Soft Champagne Silk backdrop canvas */
+    --bg-canvas: #FAF6F0;
+    --card-bg: #FFFFFF;
+    --primary-color: #FAF6EF;
+    --text-main: #222222;
+    --text-light: #222222;
+    --glass-bg: rgba(255, 255, 255, 0.92);
+    --shadow-color: rgba(61, 19, 29, 0.06);
     
-    /* [30% Secondary Color] - Containers, Headers, Text & Substructures */
-    --card-bg: #FFFFFF; /* High contrast panel base */
-    --primary-color: #FAF6EF; /* Warm light structural base */
-    --text-main: #1E293B; /* Deep Slate text */
-    --text-light: #1E293B; /* Light mode text */
-    --glass-bg: rgba(255, 255, 255, 0.88);
-    --shadow-color: rgba(15, 23, 42, 0.05);
+    --accent-color: #C5A059; /* Elegant Gold accent */
+    --accent-gold: #C5A059;
+    --accent-hover: #A8833F;
+    --accent-glow: rgba(197, 160, 89, 0.25);
+    --border-color: rgba(197, 160, 89, 0.22);
+    --glass-border: rgba(197, 160, 89, 0.18);
     
-    /* [10% Accent Color] - Action elements, active indicators & borders */
-    --accent-color: #B8860B; /* Deep Rich Gold accent */
-    --accent-hover: #9A6E07;
-    --accent-glow: rgba(184, 134, 11, 0.22);
-    --border-color: rgba(184, 134, 11, 0.25);
-    --glass-border: rgba(184, 134, 11, 0.2);
+    --header-bg: #FFFFFF;
+    --hero-bg: #FAF6F0;
+    --text-header-sub: #666666;
+}
+
+.dark-mode {
+    --brand-burgundy: #2B0C14;
+    --brand-burgundy-hover: #1F070E;
+    --brand-burgundy-gold: #4A1622;
     
-    /* Luxury Light CSS Gradient Backgrounds */
-    --header-bg: radial-gradient(circle at 50% 100%, rgba(184, 134, 11, 0.08) 0%, rgba(250, 246, 239, 0) 75%), linear-gradient(180deg, #FFFFFF 0%, #F5EFE6 100%);
-    --hero-bg: radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.1) 0%, rgba(250, 248, 245, 0) 80%), linear-gradient(135deg, #FAF8F5 0%, #F0E8D9 100%);
-    --text-header-sub: #475569;
+    --bg-color: #06070B;
+    --bg-canvas: #06070B;
+    --card-bg: #12151E;
+    --primary-color: #06070B;
+    --text-main: #F1F5F9;
+    --text-light: #F1F5F9;
+    --glass-bg: rgba(6, 7, 11, 0.88);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    
+    --accent-color: #E2B93C;
+    --accent-gold: #E2B93C;
+    --accent-hover: #F6CE55;
+    --accent-glow: rgba(226, 185, 60, 0.3);
+    --border-color: rgba(226, 185, 60, 0.2);
+    --glass-border: rgba(226, 185, 60, 0.15);
+    
+    --header-bg: #12151E;
+    --hero-bg: #06070B;
+    --rate-bg: linear-gradient(135deg, #090b11 0%, #030406 100%);
+    --appointment-bg: linear-gradient(135deg, #0f1118 0%, #06070b 100%);
+    --text-header-sub: #CBD5E1;
 }
 
 .dark-mode {
@@ -1790,4 +1818,795 @@ footer p {
     background: #1EBE5D !important;
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35) !important;
     transform: translateY(-2px);
+}
+
+/* ========================================================
+   LUXEORA STYLE COMPONENTS
+   ======================================================== */
+
+/* 1. Top Announcement Bar */
+.announcement-bar {
+    background: var(--brand-burgundy);
+    color: #FFFFFF;
+    padding: 8px 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+    z-index: 10001;
+    position: relative;
+}
+
+.announcement-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #FFE082;
+}
+
+.announcement-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.announcement-link {
+    color: #F8E7D2;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.announcement-link:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .announcement-bar {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+        padding: 8px 15px;
+    }
+}
+
+/* 2. Luxe Header Navigation */
+.luxe-header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 35px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.luxe-header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.luxe-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.luxe-logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brand-burgundy);
+    line-height: 1;
+}
+
+.dark-mode .luxe-logo-text {
+    color: var(--accent-gold);
+}
+
+.luxe-logo-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62em;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    display: block;
+    margin-top: 3px;
+}
+
+.luxe-nav-links {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+
+@media (max-width: 990px) {
+    .luxe-nav-links {
+        display: none; /* Collapsible or clean grid */
+    }
+}
+
+.luxe-nav-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78em;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.luxe-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--brand-burgundy);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.dark-mode .luxe-nav-link::after {
+    background: var(--accent-gold);
+}
+
+.luxe-nav-link:hover {
+    color: var(--brand-burgundy);
+}
+
+.dark-mode .luxe-nav-link:hover {
+    color: var(--accent-gold);
+}
+
+.luxe-nav-link:hover::after {
+    width: 100%;
+}
+
+.luxe-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.luxe-icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.15em;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.luxe-icon-btn:hover {
+    transform: translateY(-2px);
+    color: var(--brand-burgundy);
+}
+
+.dark-mode .luxe-icon-btn:hover {
+    color: var(--accent-gold);
+}
+
+.cart-badge-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: var(--brand-burgundy);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65em;
+    font-weight: 700;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode .cart-badge-count {
+    background: var(--accent-gold);
+    color: #06070B;
+}
+
+/* 3. Luxe Split Hero Section */
+.luxe-hero-section {
+    background: var(--bg-canvas);
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.luxe-hero-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .luxe-hero-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+.luxe-hero-left {
+    text-align: left;
+}
+
+.luxe-hero-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.luxe-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.8em;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--brand-burgundy);
+    margin: 0 0 20px 0;
+}
+
+.dark-mode .luxe-hero-title {
+    color: #F8FAFC;
+}
+
+.luxe-hero-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.02em;
+    line-height: 1.7;
+    color: var(--text-main);
+    opacity: 0.85;
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+.luxe-btn-burgundy {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--brand-burgundy);
+    color: #FFFFFF !important;
+    padding: 16px 36px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(61, 19, 29, 0.25);
+    transition: all 0.35s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.luxe-btn-burgundy:hover {
+    background: var(--brand-burgundy-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(61, 19, 29, 0.35);
+}
+
+.luxe-hero-micro-trust {
+    display: flex;
+    gap: 25px;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.micro-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.micro-trust-icon {
+    font-size: 1.5em;
+    color: var(--accent-color);
+}
+
+.micro-trust-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-main);
+}
+
+.luxe-hero-right {
+    position: relative;
+}
+
+.luxe-hero-img-box {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+    border: 1px solid var(--border-color);
+}
+
+.luxe-hero-img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* 4. Guarantee Bar */
+.luxe-guarantee-bar {
+    background: var(--brand-burgundy);
+    color: #FFFFFF;
+    padding: 35px 20px;
+    border-top: 1px solid rgba(197, 160, 89, 0.25);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.luxe-guarantee-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.luxe-guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 15px;
+}
+
+.guarantee-icon {
+    font-size: 2.2em;
+    color: #FFE082;
+    line-height: 1;
+}
+
+.guarantee-text h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+    color: #FFFFFF;
+}
+
+.guarantee-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    margin: 0;
+    color: #F1E5D5;
+    opacity: 0.85;
+}
+
+/* 5. Shop By Category Section */
+.luxe-category-section {
+    padding: 90px 20px;
+    background: var(--bg-canvas);
+    text-align: center;
+}
+
+.luxe-section-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.luxe-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2em;
+    font-weight: 700;
+    color: var(--brand-burgundy);
+    margin: 0 0 45px 0;
+}
+
+.dark-mode .luxe-section-title {
+    color: #F8FAFC;
+}
+
+.luxe-category-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.luxe-cat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-main);
+    display: block;
+}
+
+.luxe-cat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px var(--accent-glow);
+    border-color: var(--accent-color);
+}
+
+.luxe-cat-img-box {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+}
+
+.luxe-cat-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.luxe-cat-card:hover .luxe-cat-img-box img {
+    transform: scale(1.06);
+}
+
+.luxe-cat-footer {
+    padding: 20px;
+    text-align: center;
+    background: var(--card-bg);
+}
+
+.luxe-cat-footer h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+    color: var(--brand-burgundy);
+}
+
+.dark-mode .luxe-cat-footer h3 {
+    color: var(--accent-gold);
+}
+
+.luxe-shop-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+
+/* 6. Bestsellers Grid & Cards */
+.luxe-bestsellers-section {
+    padding: 90px 20px;
+    background: var(--card-bg);
+    text-align: center;
+}
+
+.luxe-bestseller-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.luxe-product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: all 0.4s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.luxe-product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px var(--accent-glow);
+    border-color: var(--accent-color);
+}
+
+.wishlist-heart-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    color: #888;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.25s ease;
+}
+
+.wishlist-heart-btn:hover, .wishlist-heart-btn.active {
+    color: #E63946;
+    background: #FFFFFF;
+    transform: scale(1.1);
+}
+
+.luxe-prod-img-box {
+    height: 250px;
+    overflow: hidden;
+    background: #FDFBF7;
+    position: relative;
+}
+
+.luxe-prod-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+    transition: transform 0.5s ease;
+}
+
+.luxe-product-card:hover .luxe-prod-img-box img {
+    transform: scale(1.05);
+}
+
+.luxe-prod-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.luxe-prod-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0 0 8px 0;
+}
+
+.luxe-prod-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--brand-burgundy);
+    margin: 0 0 16px 0;
+}
+
+.dark-mode .luxe-prod-price {
+    color: var(--accent-gold);
+}
+
+.luxe-add-cart-btn {
+    width: 100%;
+    padding: 12px 0;
+    background: var(--brand-burgundy);
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.luxe-add-cart-btn:hover {
+    background: var(--brand-burgundy-hover);
+    box-shadow: 0 5px 15px rgba(61, 19, 29, 0.3);
+}
+
+/* 7. Limited Time Offer Banner */
+.luxe-offer-banner {
+    margin: 60px auto;
+    max-width: 1250px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2E0F17 0%, #3D131D 40%, #1A070B 100%);
+    color: #FFFFFF;
+    box-shadow: 0 20px 50px rgba(61, 19, 29, 0.3);
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.luxe-offer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 50px 40px;
+}
+
+@media (max-width: 900px) {
+    .luxe-offer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 35px 25px;
+    }
+}
+
+.offer-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #FFE082;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.offer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 12px 0;
+    color: #FFFFFF;
+}
+
+.offer-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    opacity: 0.85;
+    margin-bottom: 25px;
+    color: #F8E7D2;
+}
+
+.offer-btn-white {
+    display: inline-block;
+    background: #FFFFFF;
+    color: var(--brand-burgundy);
+    padding: 14px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.offer-btn-white:hover {
+    background: #FFE082;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 224, 130, 0.4);
+}
+
+.offer-badge-ring {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px dashed #FFE082;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.offer-percent {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #FFE082;
+    line-height: 1;
+}
+
+.offer-off-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.offer-img-box img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
+}
+
+/* 8. Bottom Trust Statistics Bar */
+.luxe-bottom-stats {
+    background: var(--bg-canvas);
+    padding: 45px 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.luxe-stats-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.luxe-stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.luxe-stat-icon {
+    font-size: 2em;
+    color: var(--accent-color);
+}
+
+.luxe-stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--brand-burgundy);
+    line-height: 1;
+}
+
+.dark-mode .luxe-stat-val {
+    color: var(--accent-gold);
+}
+
+.luxe-stat-lbl {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-main);
+    opacity: 0.8;
 }

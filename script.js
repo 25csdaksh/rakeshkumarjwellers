@@ -451,3 +451,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Wishlist Heart Toggle Helper
+function toggleWishlist(btn) {
+    if (!btn) return;
+    btn.classList.toggle("active");
+    if (btn.classList.contains("active")) {
+        btn.innerText = "❤️";
+        btn.style.color = "#E63946";
+    } else {
+        btn.innerText = "🤍";
+        btn.style.color = "#888888";
+    }
+}
+

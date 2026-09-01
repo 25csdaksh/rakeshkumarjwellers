@@ -4,47 +4,171 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rakeshkumar Jewellers | Gold Jewellers Patan</title>
+    <title>Rakeshkumar Jewellers | Trusted Gold & Diamond Jewellers Patan</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="auth-nav">
-            <a href="login.html" class="auth-btn-small">Login</a>
-            <a href="signup.html" class="auth-btn-small">Sign up</a>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-left">
+            <span>✨ FLAT 20% OFF ON DIAMOND COLLECTION | FREE SHIPPING ON ALL ORDERS</span>
         </div>
-        <h1>Rakeshkumar Jewellers</h1>
-        <p>Patan | Trusted Gold Jewellers</p>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#collection">Collection</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#about">About</a>
-            <a href="#rate">Gold Rate</a>
-            <a href="#location">Location</a>
-            <a href="appointment.html">Appointment</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="announcement-right">
+            <a href="tel:+918799288538" class="announcement-link">📞 +91 8799288538</a>
+            <a href="mailto:dakshsoni1023@gmail.com" class="announcement-link">✉️ dakshsoni1023@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- Main Luxe Navigation Header -->
+    <header class="luxe-header">
+        <div class="luxe-header-container">
+            <a href="index.html" class="luxe-logo">
+                <div>
+                    <span class="luxe-logo-text">Rakeshkumar Jewellers</span>
+                    <span class="luxe-logo-sub">Patan • Trusted Gold & Diamond Jewellers</span>
+                </div>
+            </a>
+            <nav class="luxe-nav-links">
+                <a href="#home" class="luxe-nav-link">Home</a>
+                <a href="#collection" class="luxe-nav-link">Collections</a>
+                <a href="#bestsellers" class="luxe-nav-link">Bestsellers</a>
+                <a href="#about" class="luxe-nav-link">About Us</a>
+                <a href="#rate" class="luxe-nav-link">Gold Rate</a>
+                <a href="appointment.html" class="luxe-nav-link">Appointment</a>
+                <a href="#contact" class="luxe-nav-link">Contact</a>
+            </nav>
+            <div class="luxe-nav-actions auth-nav">
+                <a href="login.html" class="auth-btn-small">Login</a>
+                <a href="signup.html" class="auth-btn-small">Sign up</a>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Theme">🌓</button>
+            </div>
+        </div>
     </header>
 
-    <!-- Home -->
-    <section id="home" class="section hero">
-        <h2>A legacy of faith and purity</h2>
-        <p>A Legacy of Trust & Pure Gold Jewellery</p>
-        <div style="margin-top: 25px;">
-            <a class="btn" href="#collection">View Collections</a>
-            <a class="btn gold" href="appointment.html">Book Appointment</a>
+    <!-- Split Hero Section -->
+    <section id="home" class="luxe-hero-section">
+        <div class="luxe-hero-container">
+            <div class="luxe-hero-left reveal-left">
+                <span class="luxe-hero-tag">Timeless Beauty, Precious You</span>
+                <h1 class="luxe-hero-title">Crafted to Shine,<br>Made for You.</h1>
+                <p class="luxe-hero-desc">Discover exquisite gold and diamond jewellery designs that celebrate every special moment of your life with pure hallmark elegance.</p>
+                <a href="#collection" class="luxe-btn-burgundy">Explore Collection →</a>
+                
+                <div class="luxe-hero-micro-trust">
+                    <div class="micro-trust-item">
+                        <span class="micro-trust-icon">💎</span>
+                        <div>
+                            <div class="micro-trust-title">Certified Diamonds</div>
+                            <div class="micro-trust-sub">100% Authentic</div>
+                        </div>
+                    </div>
+                    <div class="micro-trust-item">
+                        <span class="micro-trust-icon">🔄</span>
+                        <div>
+                            <div class="micro-trust-title">Easy 7 Days</div>
+                            <div class="micro-trust-sub">Hassle-free Returns</div>
+                        </div>
+                    </div>
+                    <div class="micro-trust-item">
+                        <span class="micro-trust-icon">🚚</span>
+                        <div>
+                            <div class="micro-trust-title">Free Shipping</div>
+                            <div class="micro-trust-sub">Insured Delivery</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="luxe-hero-right reveal-right">
+                <div class="luxe-hero-img-box">
+                    <img src="./assets/necklace-main.jpg" alt="Exquisite Gold & Diamond Necklace">
+                </div>
+            </div>
         </div>
-        <br>
-        <a href="#collection" class="scroll-down-indicator">
-            <span>Scroll to Explore</span>
-            <svg class="scroll-down-arrow" viewBox="0 0 24 24">
-                <path d="M7 10l5 5 5-5"/>
-            </svg>
-        </a>
+    </section>
+
+    <!-- Full-Width Guarantee Bar -->
+    <section class="luxe-guarantee-bar">
+        <div class="luxe-guarantee-grid">
+            <div class="luxe-guarantee-item">
+                <div class="guarantee-icon">🎖️</div>
+                <div class="guarantee-text">
+                    <h4>BIS Hallmarked</h4>
+                    <p>100% Certified Jewellery</p>
+                </div>
+            </div>
+            <div class="luxe-guarantee-item">
+                <div class="guarantee-icon">🔄</div>
+                <div class="guarantee-text">
+                    <h4>Lifetime Exchange</h4>
+                    <p>On All Products</p>
+                </div>
+            </div>
+            <div class="luxe-guarantee-item">
+                <div class="guarantee-icon">🔒</div>
+                <div class="guarantee-text">
+                    <h4>Secure Payments</h4>
+                    <p>100% Safe & Secure</p>
+                </div>
+            </div>
+            <div class="luxe-guarantee-item">
+                <div class="guarantee-icon">🎧</div>
+                <div class="guarantee-text">
+                    <h4>Customer Support</h4>
+                    <p>Always Here to Help</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop By Category Section -->
+    <section id="collection" class="luxe-category-section">
+        <span class="luxe-section-subtitle">— SHOP BY CATEGORY —</span>
+        <h2 class="luxe-section-title">Explore Our Collections</h2>
+        
+        <div class="luxe-category-grid">
+            <a href="gold.html" class="luxe-cat-card reveal-scale delay-1">
+                <div class="luxe-cat-img-box">
+                    <img src="./assets/gold-collection.jpg" alt="Necklaces">
+                </div>
+                <div class="luxe-cat-footer">
+                    <h3>NECKLACES</h3>
+                    <span class="luxe-shop-link">Shop Now →</span>
+                </div>
+            </a>
+            
+            <a href="rings.html" class="luxe-cat-card reveal-scale delay-2">
+                <div class="luxe-cat-img-box">
+                    <img src="./assets/rings-main.jpg" alt="Rings">
+                </div>
+                <div class="luxe-cat-footer">
+                    <h3>RINGS</h3>
+                    <span class="luxe-shop-link">Shop Now →</span>
+                </div>
+            </a>
+            
+            <a href="bangles.html" class="luxe-cat-card reveal-scale delay-3">
+                <div class="luxe-cat-img-box">
+                    <img src="./assets/bangles-main.jpg" alt="Bangles">
+                </div>
+                <div class="luxe-cat-footer">
+                    <h3>BANGLES</h3>
+                    <span class="luxe-shop-link">Shop Now →</span>
+                </div>
+            </a>
+            
+            <a href="earrings.html" class="luxe-cat-card reveal-scale delay-4">
+                <div class="luxe-cat-img-box">
+                    <img src="./assets/earrings-main.jpg" alt="Earrings">
+                </div>
+                <div class="luxe-cat-footer">
+                    <h3>EARRINGS</h3>
+                    <span class="luxe-shop-link">Shop Now →</span>
+                </div>
+            </a>
+        </div>
     </section>
 
     <!-- Royal Showcase Advertisement Banner -->
@@ -76,54 +200,115 @@
         </div>
     </section>
 
-    <!-- Luxury Stats Section -->
-    <section class="stats-section reveal">
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2em; color: var(--accent-color); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 3px;">Our Promise & Heritage</h2>
-        <p style="font-family: 'Inter', sans-serif; font-size: 0.85em; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; margin-bottom: 25px;">Building Lifetime Trust Across Generations</p>
+    <!-- Bestsellers Section -->
+    <section id="bestsellers" class="luxe-bestsellers-section">
+        <span class="luxe-section-subtitle">— OUR BESTSELLERS —</span>
+        <h2 class="luxe-section-title">Most Loved Jewellery</h2>
         
-        <div class="stats-grid">
-            <div class="stat-card reveal-scale delay-1">
-                <div class="stat-number" data-target="50" data-suffix="+">0</div>
-                <div class="stat-label">Years of Heritage</div>
+        <div class="luxe-bestseller-grid">
+            <div class="luxe-product-card reveal-scale delay-1">
+                <button class="wishlist-heart-btn" onclick="toggleWishlist(this)" title="Save to Wishlist">🤍</button>
+                <div class="luxe-prod-img-box">
+                    <img src="./assets/1diamond-jewellery1.jpg" alt="Diamond Floral Pendant">
+                </div>
+                <div class="luxe-prod-details">
+                    <h4 class="luxe-prod-title">Diamond Floral Pendant</h4>
+                    <div class="luxe-prod-price">₹45,990</div>
+                    <button class="luxe-add-cart-btn" onclick="addToCart('Diamond Floral Pendant', './assets/1diamond-jewellery1.jpg', 'Exquisite diamond floral pendant in white gold.')">Add to Cart</button>
+                </div>
             </div>
-            <div class="stat-card reveal-scale delay-2">
-                <div class="stat-number" data-target="100" data-suffix="%">0</div>
-                <div class="stat-label">BIS Hallmark Purity</div>
+            
+            <div class="luxe-product-card reveal-scale delay-2">
+                <button class="wishlist-heart-btn" onclick="toggleWishlist(this)" title="Save to Wishlist">🤍</button>
+                <div class="luxe-prod-img-box">
+                    <img src="./assets/ring1.jpg" alt="Classic Solitaire Ring">
+                </div>
+                <div class="luxe-prod-details">
+                    <h4 class="luxe-prod-title">Classic Solitaire Ring</h4>
+                    <div class="luxe-prod-price">₹38,990</div>
+                    <button class="luxe-add-cart-btn" onclick="addToCart('Classic Solitaire Ring', './assets/ring1.jpg', 'Timeless solitaire diamond engagement ring in 18K yellow gold.')">Add to Cart</button>
+                </div>
             </div>
-            <div class="stat-card reveal-scale delay-3">
-                <div class="stat-number" data-target="10000" data-suffix="+">0</div>
-                <div class="stat-label">Happy Families</div>
+            
+            <div class="luxe-product-card reveal-scale delay-3">
+                <button class="wishlist-heart-btn" onclick="toggleWishlist(this)" title="Save to Wishlist">🤍</button>
+                <div class="luxe-prod-img-box">
+                    <img src="./assets/bangle1.jpg" alt="Gold & Diamond Bangles">
+                </div>
+                <div class="luxe-prod-details">
+                    <h4 class="luxe-prod-title">Gold & Diamond Bangles</h4>
+                    <div class="luxe-prod-price">₹125,990</div>
+                    <button class="luxe-add-cart-btn" onclick="addToCart('Gold & Diamond Bangles', './assets/bangle1.jpg', 'Pair of handcrafted 22K gold bangles studded with diamonds.')">Add to Cart</button>
+                </div>
             </div>
-            <div class="stat-card reveal-scale delay-4">
-                <div class="stat-number" data-target="5000" data-suffix="+">0</div>
-                <div class="stat-label">Exclusive Designs</div>
+            
+            <div class="luxe-product-card reveal-scale delay-4">
+                <button class="wishlist-heart-btn" onclick="toggleWishlist(this)" title="Save to Wishlist">🤍</button>
+                <div class="luxe-prod-img-box">
+                    <img src="./assets/earring1.jpg" alt="Pear Drop Earrings">
+                </div>
+                <div class="luxe-prod-details">
+                    <h4 class="luxe-prod-title">Pear Drop Earrings</h4>
+                    <div class="luxe-prod-price">₹56,990</div>
+                    <button class="luxe-add-cart-btn" onclick="addToCart('Pear Drop Earrings', './assets/earring1.jpg', 'Elegant pear-shaped dangling diamond earrings.')">Add to Cart</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Collection -->
-    <section id="collection" class="section">
-        <h2 class="reveal">Our Collections</h2>
-        <div class="grid">
-            <div class="card reveal-scale delay-1" onclick="window.location.href='gold.html'" style="cursor: pointer;">
-                <img src="./assets/gold-collection.jpg" alt="Gold Jewellery">
-                <h3>Gold Jewellery</h3>
+    <!-- Limited Time Offer Banner -->
+    <div class="luxe-offer-banner reveal">
+        <div class="luxe-offer-grid">
+            <div>
+                <span class="offer-tag">LIMITED TIME OFFER</span>
+                <h2 class="offer-title">Shine More,<br>Save More</h2>
+                <p class="offer-desc">Get flat 20% off on our entire exclusive Diamond Collection this season.</p>
+                <a href="diamond.html" class="offer-btn-white">Shop Now →</a>
             </div>
-            <div class="card reveal-scale delay-2" onclick="window.location.href='silver.html'" style="cursor: pointer;">
-                <img src="./assets/silver-jewellery-new.jpg" alt="Silver Jewellery">
-                <h3>Silver Jewellery</h3>
+            
+            <div>
+                <div class="offer-badge-ring">
+                    <div class="offer-percent">20%</div>
+                    <div class="offer-off-text">OFF</div>
+                </div>
             </div>
-            <div class="card reveal-scale delay-3" onclick="window.location.href='diamond.html'" style="cursor: pointer;">
-                <img src="./assets/diamond jwellary.jpeg" alt="Diamond Jewellery">
-                <h3>Diamond Jewellery</h3>
+            
+            <div class="offer-img-box">
+                <img src="./assets/ring2.jpg" alt="Diamond Ring Special Offer">
             </div>
-            <div class="card reveal-scale delay-4" onclick="window.location.href='bridal.html'" style="cursor: pointer;">
-                <img src="./assets/bridal-latest.jpg" alt="Bridal Collection">
-                <h3>Bridal Collection</h3>
+        </div>
+    </div>
+
+    <!-- Bottom Trust Statistics Bar -->
+    <section class="luxe-bottom-stats reveal">
+        <div class="luxe-stats-grid">
+            <div class="luxe-stat-item">
+                <div class="luxe-stat-icon">👥</div>
+                <div>
+                    <div class="luxe-stat-val">10,000+</div>
+                    <div class="luxe-stat-lbl">Happy Customers</div>
+                </div>
             </div>
-            <div class="card reveal-scale delay-5" onclick="window.location.href='custom-designs.html'" style="cursor: pointer;">
-                <img src="./assets/custom1.jpg" alt="Custom Designs">
-                <h3>Custom Designs</h3>
+            <div class="luxe-stat-item">
+                <div class="luxe-stat-icon">🛡️</div>
+                <div>
+                    <div class="luxe-stat-val">100%</div>
+                    <div class="luxe-stat-lbl">Certified Products</div>
+                </div>
+            </div>
+            <div class="luxe-stat-item">
+                <div class="luxe-stat-icon">💎</div>
+                <div>
+                    <div class="luxe-stat-val">500+</div>
+                    <div class="luxe-stat-lbl">Unique Designs</div>
+                </div>
+            </div>
+            <div class="luxe-stat-item">
+                <div class="luxe-stat-icon">🎖️</div>
+                <div>
+                    <div class="luxe-stat-val">50+</div>
+                    <div class="luxe-stat-lbl">Years of Trust</div>
+                </div>
             </div>
         </div>
     </section>
@@ -140,8 +325,7 @@
         </div>
     </section>
 
-
-    <!-- About -->
+    <!-- About Us -->
     <section id="about" class="section">
         <h2 class="reveal">About Us</h2>
         <p class="reveal-left">
