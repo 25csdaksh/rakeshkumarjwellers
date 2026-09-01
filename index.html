@@ -10,39 +10,33 @@
 
 <body>
 
-    <!-- White + Dark Walnut Wood + Champagne Gold Luxury Boutique Entrance -->
+    <!-- White + Dark Walnut Wood + Champagne Gold 3D Showroom Entrance -->
     <div id="royal-door-loader" class="royal-door-loader">
-        <!-- Top ESTD Header Bar -->
-        <div class="entrance-top-bar">
-            <div class="estd-badge">
+        <!-- Studio Background Grid & Reflective Floor -->
+        <div class="showroom-studio-bg">
+            <div class="studio-wall-light"></div>
+            <div class="studio-reflective-floor"></div>
+        </div>
+
+        <!-- Top Header Bar -->
+        <header class="entrance-top-header">
+            <div class="top-left-watermark">RAKESHKUMAR JEWELLERS</div>
+            <div class="top-center-estd">
                 <span>ESTD. 1992</span>
-                <div class="estd-divider">❖ ─── ✦ ─── ❖</div>
+                <div class="estd-divider-ornament">❖ ─── ✦ ─── ❖</div>
             </div>
-        </div>
+            <div class="top-right-socials">
+                <span class="soc-icon">📷</span>
+                <span class="soc-icon">f</span>
+                <span class="soc-icon">📍</span>
+            </div>
+        </header>
 
-        <!-- Center Illuminated Dark Walnut Showcase (Hero Element) -->
-        <div class="door-center-showcase">
-            <div class="showcase-arch-frame">
-                <div class="spotlight-beam"></div>
-                <div class="showcase-inner-cabinet">
-                    <img src="./assets/add/rajasthani haar.png" alt="Traditional Gold Rajasthani Haar Showcase" class="showcase-jewellery-img">
-                </div>
-                <div class="showcase-gold-plaque">• PURE TRUST. PURE GOLD. •</div>
-            </div>
-        </div>
-
-        <!-- Left Boutique Door (Ivory White Panel with Dark Walnut Carved Jali & Gold Frame) -->
-        <div class="royal-door royal-door-left">
-            <!-- Dark Walnut Carved Lattice Frame -->
-            <div class="wood-carved-jali-frame">
-                <div class="jali-pattern-carving"></div>
-                <div class="door-handle door-handle-left"></div>
-            </div>
-            
-            <!-- Ivory White Panel Content -->
-            <div class="ivory-door-panel">
-                <div class="mandala-watermark watermark-bl"></div>
-                <div class="door-content-wrapper">
+        <!-- Main 3D Architectural Scene -->
+        <div class="showroom-3d-scene">
+            <!-- Left 3D Panel & Dark Walnut Door -->
+            <div class="panel-3d-wrapper panel-left-3d">
+                <div class="white-wall-card">
                     <div class="brand-monogram-crest">
                         <div class="monogram-crown-icon">
                             <svg viewBox="0 0 24 24" class="crown-svg"><path d="M2 18h20L19 8l-5 5-2-7-2 7-5-5L2 18z" fill="#C5A059"/></svg>
@@ -56,22 +50,37 @@
                     <div class="door-brand-sub-title">JEWELLERS</div>
                     <div class="door-gold-divider"></div>
                     <p class="door-tagline">PATAN • PURE GOLD & DIAMOND HERITAGE</p>
+                    
+                    <div class="mandala-watermark-art watermark-bl"></div>
+                </div>
+                
+                <!-- Attached Dark Walnut Jali Door -->
+                <div class="wood-jali-door wood-door-left">
+                    <div class="wood-jali-carving"></div>
+                    <div class="gold-door-handle handle-right"></div>
                 </div>
             </div>
-        </div>
 
-        <!-- Right Boutique Door (Ivory White Panel with Dark Walnut Carved Jali & Gold Frame) -->
-        <div class="royal-door royal-door-right">
-            <!-- Dark Walnut Carved Lattice Frame -->
-            <div class="wood-carved-jali-frame">
-                <div class="jali-pattern-carving"></div>
-                <div class="door-handle door-handle-right"></div>
+            <!-- Center Illuminated Dark Walnut Showcase Niche -->
+            <div class="showcase-3d-niche">
+                <div class="niche-arch-frame">
+                    <div class="niche-spotlight"></div>
+                    <div class="niche-display-inner">
+                        <img src="./assets/add/rajasthani haar.png" alt="Royal Gold Rajasthani Haar Display" class="niche-jewellery-img">
+                    </div>
+                    <div class="niche-gold-plaque">• PURE TRUST. PURE GOLD. •</div>
+                </div>
             </div>
 
-            <!-- Ivory White Panel Content -->
-            <div class="ivory-door-panel">
-                <div class="mandala-watermark watermark-br"></div>
-                <div class="door-content-wrapper">
+            <!-- Right 3D Panel & Dark Walnut Door -->
+            <div class="panel-3d-wrapper panel-right-3d">
+                <!-- Attached Dark Walnut Jali Door -->
+                <div class="wood-jali-door wood-door-right">
+                    <div class="wood-jali-carving"></div>
+                    <div class="gold-door-handle handle-left"></div>
+                </div>
+                
+                <div class="white-wall-card">
                     <h2 class="door-message-title">TIMELESS BEAUTY.<br>TRUSTED FOREVER.</h2>
                     <div class="door-gold-divider"></div>
                     
@@ -93,24 +102,26 @@
                             <span>TIMELESS DESIGNS</span>
                         </div>
                     </div>
+                    
+                    <div class="mandala-watermark-art watermark-br"></div>
                 </div>
             </div>
         </div>
 
         <!-- Bottom CTA & Trust Bar -->
-        <div class="door-cta-container">
-            <button id="enterExperienceBtn" class="door-cta-btn" onclick="openRoyalDoors()" aria-label="Enter Collection Experience">
+        <footer class="entrance-bottom-footer">
+            <button id="enterExperienceBtn" class="entrance-cta-pill" onclick="openRoyalDoors()" aria-label="Enter Collection Experience">
                 <span>ENTER COLLECTION</span>
-                <span class="cta-arrow">→</span>
+                <span class="cta-arrow-icon">→</span>
             </button>
-            <div class="bottom-trust-badges">
+            <div class="entrance-trust-bar">
                 <span>100% HALLMARKED GOLD</span>
-                <span class="dot-sep">•</span>
+                <span class="bullet-gold">•</span>
                 <span>CERTIFIED DIAMONDS</span>
-                <span class="dot-sep">•</span>
+                <span class="bullet-gold">•</span>
                 <span>BIS HALLMARKED JEWELLERY</span>
             </div>
-        </div>
+        </footer>
     </div>
 
     <!-- Announcement Bar -->
