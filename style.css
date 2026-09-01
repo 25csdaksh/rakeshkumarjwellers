@@ -2590,7 +2590,7 @@ footer p {
 }
 
 /* ========================================================
-   3D ARCHITECTURAL SHOWROOM ENTRANCE (EXACT MATCH)
+   FULL-SCREEN CLOSED DOOR LUXURY BOUTIQUE ENTRANCE
    ======================================================== */
 .royal-door-loader {
     position: fixed;
@@ -2599,358 +2599,62 @@ footer p {
     width: 100vw;
     height: 100vh;
     z-index: 999999;
-    perspective: 1500px;
+    perspective: 1800px;
     overflow: hidden;
-    background: #FAF7F2;
+    background: #FAF8F5; /* Warm Ivory Canvas */
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     font-family: 'Inter', sans-serif;
     transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     box-sizing: border-box;
 }
 
-/* Studio Background & Reflective Floor */
-.showroom-studio-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.studio-wall-light {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70%;
-    background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #FAF6F0 60%, #EFE9E0 100%);
-}
-
-.studio-reflective-floor {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30%;
-    background: linear-gradient(180deg, #EFE8DE 0%, #FFFFFF 100%);
-    border-top: 1px solid rgba(197, 160, 89, 0.3);
-    box-shadow: inset 0 15px 30px rgba(0, 0, 0, 0.03);
-}
-
-/* Top Header Bar */
-.entrance-top-header {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.top-left-watermark {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72em;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #4A332A;
-    text-transform: uppercase;
-}
-
-.top-center-estd {
-    text-align: center;
-}
-
-.top-center-estd span {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75em;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: #2C1A14;
-    text-transform: uppercase;
-}
-
-.estd-divider-ornament {
-    font-size: 0.6em;
-    color: #C5A059;
-    margin-top: 3px;
-}
-
-.top-right-socials {
-    display: flex;
-    gap: 15px;
-    color: #4A332A;
-    font-size: 0.85em;
-}
-
-/* Main 3D Architectural Scene */
-.showroom-3d-scene {
-    position: relative;
-    z-index: 5;
-    width: 100%;
-    max-width: 1400px;
-    height: calc(100vh - 170px);
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    perspective: 1200px;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-/* 3D Left & Right Panel Wrappers */
-.panel-3d-wrapper {
-    display: flex;
-    align-items: center;
-    height: 90%;
-    max-height: 560px;
-    width: 38%;
-    max-width: 460px;
-    transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
-}
-
-.panel-left-3d {
-    transform-origin: left center;
-    transform: rotateY(16deg) translateZ(0);
-}
-
-.panel-right-3d {
-    transform-origin: right center;
-    transform: rotateY(-16deg) translateZ(0);
-}
-
-/* White Wall Card Panel */
-.white-wall-card {
-    flex-grow: 1;
-    height: 100%;
-    background: #FFFFFF;
-    border: 1px solid rgba(197, 160, 89, 0.35);
-    box-shadow: 0 15px 35px rgba(44, 26, 20, 0.08), inset 0 0 30px rgba(250, 248, 245, 0.8);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 35px 25px;
-    box-sizing: border-box;
-    position: relative;
-    text-align: center;
-}
-
-.mandala-watermark-art {
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    background-image: radial-gradient(circle, rgba(197, 160, 89, 0.14) 0%, rgba(255, 255, 255, 0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.watermark-bl { bottom: -40px; left: -40px; }
-.watermark-br { bottom: -40px; right: -40px; }
-
-/* Dark Walnut Wooden Jali Door */
-.wood-jali-door {
-    width: 110px;
-    height: 100%;
-    background: linear-gradient(135deg, #2E1A13 0%, #3D231A 50%, #20110B 100%);
-    border: 1px solid #C5A059;
-    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.7), 0 10px 25px rgba(0, 0, 0, 0.25);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.wood-door-left {
-    border-left: 2px solid #C5A059;
-}
-
-.wood-door-right {
-    border-right: 2px solid #C5A059;
-}
-
-.wood-jali-carving {
-    width: 82%;
-    height: 92%;
-    border: 1px dashed rgba(197, 160, 89, 0.45);
-    background-image: radial-gradient(rgba(197, 160, 89, 0.3) 1.5px, transparent 1.5px);
-    background-size: 14px 14px;
-    opacity: 0.65;
-    border-radius: 4px;
-}
-
-.gold-door-handle {
+/* 1. Interior Showroom Showcase (Behind Doors - Hidden Initially) */
+.interior-reveal-showcase {
     position: absolute;
     top: 50%;
-    width: 12px;
-    height: 75px;
-    background: linear-gradient(180deg, #FFE082 0%, #C5A059 50%, #9A7228 100%);
-    border-radius: 6px;
-    box-shadow: 0 0 12px rgba(197, 160, 89, 0.5), 0 4px 10px rgba(0, 0, 0, 0.4);
-    transform: translateY(-50%);
-    z-index: 6;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    width: 320px;
+    height: 480px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    pointer-events: none;
+    transition: transform 1.8s ease, opacity 0.8s ease;
 }
 
-.handle-right { right: 8px; }
-.handle-left { left: 8px; }
-
-/* Left Panel Content Typography */
-.brand-monogram-crest {
-    margin-bottom: 18px;
-}
-
-.monogram-crown-icon .crown-svg {
-    width: 30px;
-    height: 30px;
-    display: block;
-    margin: 0 auto 6px auto;
-    filter: drop-shadow(0 2px 4px rgba(197, 160, 89, 0.4));
-}
-
-.monogram-circle {
-    width: 60px;
-    height: 60px;
+.interior-warm-spotlight {
+    position: absolute;
+    top: -20px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(255, 224, 130, 0.4) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(0, 0, 0, 0) 75%);
     border-radius: 50%;
-    border: 1.5px solid #C5A059;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
-    box-shadow: 0 4px 12px rgba(197, 160, 89, 0.15);
+    filter: blur(22px);
 }
 
-.monogram-circle span {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2em;
-    font-weight: 700;
-    color: #2C1A14;
-}
-
-.door-brand-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2em;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #2C1A14;
-    margin: 0;
-    text-transform: uppercase;
-    line-height: 1.1;
-}
-
-.door-brand-sub-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8em;
-    font-weight: 600;
-    letter-spacing: 5px;
-    color: #C5A059;
-    margin-top: 4px;
-    text-transform: uppercase;
-}
-
-.door-gold-divider {
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #C5A059, transparent);
-    margin: 16px auto;
-}
-
-.door-tagline {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.68em;
-    font-weight: 600;
-    letter-spacing: 2.2px;
-    color: #4A332A;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-/* Right Panel Message & Highlights */
-.door-message-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7em;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #2C1A14;
-    margin: 0 0 8px 0;
-    line-height: 1.3;
-    text-transform: uppercase;
-}
-
-.door-highlights-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 20px;
-    text-align: left;
-    max-width: 250px;
-}
-
-.highlight-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #3A231B;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.68em;
-    font-weight: 600;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-}
-
-.h-icon {
-    width: 16px;
-    height: 16px;
-    color: #C5A059;
-    flex-shrink: 0;
-}
-
-/* Center Illuminated Dark Walnut Showcase Niche */
-.showcase-3d-niche {
-    width: 280px;
-    height: 90%;
-    max-height: 540px;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.niche-arch-frame {
+.interior-display-arch {
     position: relative;
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, #26150F 0%, #150A06 100%);
-    border-radius: 120px 120px 12px 12px;
+    border-radius: 140px 140px 12px 12px;
     border: 3px solid #2C1A14;
-    box-shadow: 0 20px 50px rgba(44, 26, 20, 0.4), inset 0 0 35px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 25px 60px rgba(44, 26, 20, 0.4), inset 0 0 40px rgba(0, 0, 0, 0.85);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 20px 15px;
     box-sizing: border-box;
 }
 
-.niche-spotlight {
-    position: absolute;
-    top: -15px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(255, 224, 130, 0.45) 0%, rgba(197, 160, 89, 0.15) 50%, rgba(0, 0, 0, 0) 75%);
-    border-radius: 50%;
-    filter: blur(18px);
-    animation: spotlightSoft 3.5s infinite alternate ease-in-out;
-}
-
-.niche-display-inner {
+.interior-jewellery-bust {
     position: relative;
     width: 100%;
     height: 85%;
@@ -2960,46 +2664,295 @@ footer p {
     z-index: 2;
 }
 
-.niche-jewellery-img {
+.interior-necklace-img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.75));
-    animation: jewelFloat 4s ease-in-out infinite alternate;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.8));
 }
 
-.niche-gold-plaque {
+.interior-gold-plaque {
     position: absolute;
-    bottom: 12px;
+    bottom: 15px;
     background: linear-gradient(90deg, #2C1A14 0%, #3D251C 50%, #2C1A14 100%);
     color: #FFE082;
     border: 1px solid #C5A059;
-    padding: 5px 15px;
+    padding: 6px 18px;
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.62em;
+    font-size: 0.65em;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     z-index: 3;
 }
 
-/* Bottom CTA & Trust Bar */
-.entrance-bottom-footer {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    padding: 15px 20px 25px 20px;
+/* 2. Top ESTD Header */
+.entrance-wall-frame {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
     text-align: center;
-    box-sizing: border-box;
 }
 
-.entrance-cta-pill {
+.entrance-top-estd span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #2C1A14;
+    text-transform: uppercase;
+}
+
+.estd-divider {
+    font-size: 0.65em;
+    color: #C5A059;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+/* 3. Heavy Dark Walnut Wooden Doors (COMPLETELY CLOSED INITIALLY) */
+.closed-door-container {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    perspective: 1600px;
+    display: flex;
+    overflow: hidden;
+}
+
+.boutique-door {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(135deg, #1F0D07 0%, #2E150C 50%, #150905 100%);
+    box-sizing: border-box;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.8);
+    transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.door-left {
+    left: 0;
+    transform-origin: left center;
+    border-right: 1px solid rgba(197, 160, 89, 0.5);
+}
+
+.door-right {
+    right: 0;
+    transform-origin: right center;
+    border-left: 1px solid rgba(197, 160, 89, 0.5);
+}
+
+/* Center Seam Line Between Closed Doors */
+.door-center-seam {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100vh;
+    background: linear-gradient(180deg, #FFE082 0%, #C5A059 50%, #8A651E 100%);
+    transform: translateX(-50%);
+    z-index: 15;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.8);
+    transition: opacity 0.4s ease;
+}
+
+/* Door Inner Wood Texture & Content Framing */
+.door-wood-texture {
+    width: 100%;
+    height: 100%;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: radial-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.door-carved-jali-panel {
+    position: absolute;
+    width: 82%;
+    height: 84%;
+    border: 1px dashed rgba(197, 160, 89, 0.3);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.jali-line-art {
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(197, 160, 89, 0.18) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    opacity: 0.5;
+}
+
+/* Gold Handles on Door Edge */
+.door-handle {
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 90px;
+    background: linear-gradient(180deg, #FFE082 0%, #C5A059 50%, #8A651E 100%);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.6), 0 4px 15px rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.door-handle-right { right: 12px; }
+.door-handle-left { left: 12px; }
+
+/* Content Typography on Closed Left Door Panel */
+.door-content-wrapper {
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 400px;
+    width: 100%;
+    z-index: 10;
+}
+
+.brand-monogram-crest {
+    margin-bottom: 20px;
+}
+
+.crown-icon .crown-svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto 6px auto;
+    filter: drop-shadow(0 0 8px rgba(255, 224, 130, 0.5));
+}
+
+.monogram-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1.5px solid #C5A059;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+.monogram-circle span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #FFE082;
+}
+
+.door-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #FFE082;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.door-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #F8E7D2;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.door-divider {
+    width: 90px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C5A059, transparent);
+    margin: 20px auto;
+}
+
+.door-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: #C5A059;
+    text-transform: uppercase;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Content Typography on Closed Right Door Panel */
+.door-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #FFE082;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.door-qualities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    text-align: left;
+    max-width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quality-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #F8E7D2;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.q-icon {
+    width: 18px;
+    height: 18px;
+    color: #C5A059;
+    flex-shrink: 0;
+}
+
+/* 4. Bottom CTA Button & Badges */
+.door-bottom-container {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.door-enter-btn {
     background: #FFFFFF;
     color: #2C1A14;
     border: 1px solid #C5A059;
-    padding: 14px 45px;
+    padding: 15px 46px;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
     font-size: 0.78em;
@@ -3010,35 +2963,35 @@ footer p {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.22), 0 2px 6px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.25), 0 4px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     outline: none;
 }
 
-.entrance-cta-pill:hover, .entrance-cta-pill:focus {
+.door-enter-btn:hover, .door-enter-btn:focus {
     background: #2C1A14;
     color: #FFE082;
     border-color: #2C1A14;
-    box-shadow: 0 12px 35px rgba(44, 26, 20, 0.4);
+    box-shadow: 0 12px 35px rgba(44, 26, 20, 0.5);
     transform: translateY(-3px);
 }
 
-.cta-arrow-icon {
+.btn-arrow {
     font-size: 1.1em;
     transition: transform 0.3s ease;
 }
 
-.entrance-cta-pill:hover .cta-arrow-icon {
+.door-enter-btn:hover .btn-arrow {
     transform: translateX(4px);
 }
 
-.entrance-trust-bar {
+.trust-badge-line {
     margin-top: 14px;
     font-family: 'Inter', sans-serif;
     font-size: 0.65em;
     font-weight: 600;
-    letter-spacing: 2.2px;
-    color: #7D5D4E;
+    letter-spacing: 2px;
+    color: #C5A059;
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -3046,75 +2999,99 @@ footer p {
     justify-content: center;
 }
 
-.bullet-gold { color: #C5A059; }
+.dot { color: #FFE082; }
 
-/* Door Opening Animation States (Smooth Realistic 3D Opening) */
-.royal-door-loader.opened .panel-left-3d {
-    transform: rotateY(-95deg) translateX(-80%);
+/* 5. CLICK TRIGGERED ANIMATION STATES (DOORS SWING WIDE OPEN FROM HINGES) */
+.royal-door-loader.opened .door-left {
+    transform: rotateY(-115deg);
+}
+
+.royal-door-loader.opened .door-right {
+    transform: rotateY(115deg);
+}
+
+.royal-door-loader.opened .door-center-seam {
     opacity: 0;
-    transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.2s ease;
 }
 
-.royal-door-loader.opened .panel-right-3d {
-    transform: rotateY(95deg) translateX(80%);
+.royal-door-loader.opened .door-bottom-container,
+.royal-door-loader.opened .entrance-wall-frame {
     opacity: 0;
-    transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.2s ease;
+    transform: translate(-50%, 20px);
 }
 
-.royal-door-loader.opened .wood-door-left {
-    transform: rotateY(-90deg);
-    transition: transform 1.4s ease;
-}
-
-.royal-door-loader.opened .wood-door-right {
-    transform: rotateY(90deg);
-    transition: transform 1.4s ease;
-}
-
-.royal-door-loader.opened .entrance-bottom-footer,
-.royal-door-loader.opened .entrance-top-header {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-.royal-door-loader.opened .showcase-3d-niche {
-    transform: scale(1.25);
-    transition: transform 1.6s ease;
+.royal-door-loader.opened .interior-reveal-showcase {
+    transform: translate(-50%, -50%) scale(1.12);
+    opacity: 1;
 }
 
 .royal-door-loader.fade-out {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Mobile & Tablet Responsive Layout */
-@media (max-width: 990px) {
-    .showroom-3d-scene {
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .boutique-door, .interior-reveal-showcase, .door-enter-btn {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Mobile Composition */
+@media (max-width: 900px) {
+    .closed-door-container {
         flex-direction: column;
-        height: auto;
-        gap: 20px;
-        perspective: none;
     }
-    .panel-3d-wrapper {
-        width: 100%;
-        max-width: 100%;
-        transform: none !important;
-        height: auto;
+    .boutique-door {
+        width: 100vw;
+        height: 50vh;
+        padding: 20px;
     }
-    .wood-jali-door {
-        display: none;
+    .door-left {
+        top: 0;
+        transform-origin: top center;
+        border-right: none;
+        border-bottom: 1px solid rgba(197, 160, 89, 0.5);
     }
-    .showcase-3d-niche {
-        width: 220px;
-        height: 320px;
+    .door-right {
+        bottom: 0;
+        top: auto;
+        transform-origin: bottom center;
+        border-left: none;
+        border-top: 1px solid rgba(197, 160, 89, 0.5);
     }
-    .entrance-top-header {
-        padding: 15px 20px;
+    .door-center-seam {
+        width: 100vw;
+        height: 2px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
     }
-    .entrance-trust-bar {
+    .royal-door-loader.opened .door-left {
+        transform: rotateX(115deg);
+    }
+    .royal-door-loader.opened .door-right {
+        transform: rotateX(-115deg);
+    }
+    .door-wood-texture {
+        padding: 15px;
+    }
+    .door-title {
+        font-size: 1.7em;
+    }
+    .door-headline {
+        font-size: 1.3em;
+    }
+    .door-qualities-list {
+        gap: 8px;
+    }
+    .door-enter-btn {
+        padding: 12px 28px;
+        font-size: 0.7em;
+    }
+    .trust-badge-line {
         font-size: 0.55em;
-        flex-wrap: wrap;
+        gap: 6px;
     }
 }

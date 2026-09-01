@@ -329,17 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // STYLISH SCROLL ANIMATION & INTERACTIVITY SUITE
     // ========================================================
     
-    // 0. Royal Boutique Entrance Controller
+    // 0. Royal Boutique Entrance Controller (Doors Stay 100% Closed Initially)
     const doorLoader = document.getElementById("royal-door-loader");
     if (doorLoader) {
         document.body.style.overflow = "hidden";
-        
-        // Auto open doors after 1.5 seconds (1500ms)
-        setTimeout(() => {
-            if (typeof window.openRoyalDoors === "function") {
-                window.openRoyalDoors();
-            }
-        }, 1500);
     }
 
 // Global Door Opening Trigger Function (Bound to window for HTML onclick compatibility)
