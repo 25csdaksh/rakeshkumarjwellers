@@ -24,10 +24,9 @@
     --glass-border: rgba(197, 160, 89, 0.18);
     
     /* Luxury CSS Gradient Backgrounds */
-    --header-bg: linear-gradient(135deg, #FFFFFF 0%, #F5EFEB 100%);
-    --hero-bg: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.08) 0%, rgba(15, 23, 42, 0) 80%), linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    --rate-bg: linear-gradient(135deg, #131924 0%, #0b0f17 100%);
-    --appointment-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --header-bg: radial-gradient(circle at 50% 100%, rgba(197, 160, 89, 0.12) 0%, rgba(15, 23, 42, 0) 75%), linear-gradient(135deg, #1A2333 0%, #0F172A 100%);
+    --hero-bg: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.12) 0%, rgba(15, 23, 42, 0) 80%), linear-gradient(135deg, #0F172A 0%, #0A0F1D 100%);
+    --text-header-sub: #E2E8F0;
 }
 
 .dark-mode {
@@ -54,10 +53,11 @@
     --glass-border: rgba(226, 185, 60, 0.15);
     
     /* Luxury CSS Gradient Backgrounds (Dark Mode) */
-    --header-bg: radial-gradient(circle at 50% 100%, rgba(226, 185, 60, 0.08) 0%, rgba(6, 7, 11, 0) 70%), linear-gradient(135deg, #14161F 0%, #06070B 100%);
-    --hero-bg: radial-gradient(circle at 50% 50%, rgba(226, 185, 60, 0.08) 0%, rgba(6, 7, 11, 0) 80%), linear-gradient(135deg, #0f1118 0%, #06070b 100%);
+    --header-bg: radial-gradient(circle at 50% 100%, rgba(226, 185, 60, 0.1) 0%, rgba(6, 7, 11, 0) 70%), linear-gradient(135deg, #14161F 0%, #06070B 100%);
+    --hero-bg: radial-gradient(circle at 50% 50%, rgba(226, 185, 60, 0.1) 0%, rgba(6, 7, 11, 0) 80%), linear-gradient(135deg, #06070B 0%, #020305 100%);
     --rate-bg: linear-gradient(135deg, #090b11 0%, #030406 100%);
     --appointment-bg: linear-gradient(135deg, #0f1118 0%, #06070b 100%);
+    --text-header-sub: #CBD5E1;
 }
 
 body {
@@ -455,34 +455,49 @@ nav a:hover::after {
     transform: translateX(-6px);
 }
 
-/* Authentication Navigation */
+/* Authentication & Utility Toolbar Navigation */
 .auth-nav {
     position: absolute;
-    top: 30px;
-    right: 110px;
+    top: 25px;
+    right: 30px;
     display: flex;
-    gap: 15px;
-    z-index: 10;
+    align-items: center;
+    gap: 12px;
+    z-index: 100;
+}
+
+.user-welcome-text {
+    color: var(--accent-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    align-self: center;
+    margin-right: 8px;
 }
 
 .auth-btn-small {
     text-decoration: none;
     color: var(--accent-color);
     border: 1px solid var(--border-color);
-    padding: 8px 20px;
+    padding: 8px 18px;
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 0.8em;
-    font-weight: 500;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 4px;
     transition: all 0.3s ease;
     background: var(--glass-bg);
     backdrop-filter: blur(8px);
+    display: inline-flex;
+    align-items: center;
 }
 
 .auth-btn-small:hover {
     background: var(--accent-color);
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     border-color: var(--accent-color);
     box-shadow: 0 0 15px var(--accent-glow);
     transform: translateY(-2px);
@@ -790,18 +805,18 @@ form select:focus {
 
 /* Theme Toggle Button */
 .theme-toggle {
-    position: absolute;
-    top: 35px;
-    right: 40px;
-    background: var(--card-bg);
+    position: relative;
+    top: auto;
+    right: auto;
+    background: var(--glass-bg);
     backdrop-filter: blur(8px);
     border: 1px solid var(--border-color);
     color: var(--accent-color);
-    font-size: 1.3em;
-    padding: 10px 18px;
+    font-size: 1.05em;
+    padding: 6px 14px;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -812,6 +827,7 @@ form select:focus {
     color: var(--primary-color);
     border-color: var(--accent-color);
     box-shadow: 0 0 15px var(--accent-glow);
+    transform: scale(1.08);
 }
 
 form button {

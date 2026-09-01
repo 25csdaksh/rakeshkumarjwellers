@@ -148,6 +148,8 @@ function updateAuthNav() {
     if (!authNav) return;
     
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const themeBtnHtml = `<button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Theme">🌓</button>`;
+    
     if (isLoggedIn) {
         const currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");
         const name = currentUser.name ? currentUser.name.split(" ")[0] : "User";
@@ -155,14 +157,16 @@ function updateAuthNav() {
         const cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
         const cartCount = cart.length;
         authNav.innerHTML = `
-            <span style="color: var(--accent-color); font-family: 'Inter', sans-serif; font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; align-self: center; margin-right: 15px;">Welcome, ${name}</span>
-            <a href="profile.html" class="auth-btn-small" style="margin-right: 10px;">Cart (${cartCount})</a>
+            <span class="user-welcome-text">Welcome, ${name}</span>
+            <a href="profile.html" class="auth-btn-small">Cart (${cartCount})</a>
             <a href="#" onclick="logout(event)" class="auth-btn-small">Logout</a>
+            ${themeBtnHtml}
         `;
     } else {
         authNav.innerHTML = `
             <a href="login.html" class="auth-btn-small">Login</a>
             <a href="signup.html" class="auth-btn-small">Sign up</a>
+            ${themeBtnHtml}
         `;
     }
 }
