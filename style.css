@@ -2035,7 +2035,7 @@ footer p {
 /* 3. Luxe Split Hero Section */
 .luxe-hero-section {
     background: var(--bg-canvas);
-    padding: 70px 20px;
+    padding: 45px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -2045,14 +2045,14 @@ footer p {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 45px;
     align-items: center;
 }
 
 @media (max-width: 900px) {
     .luxe-hero-container {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 30px;
     }
 }
 
@@ -2062,22 +2062,22 @@ footer p {
 
 .luxe-hero-tag {
     font-family: 'Inter', sans-serif;
-    font-size: 0.78em;
+    font-size: 0.75em;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent-color);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     display: block;
 }
 
 .luxe-hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.8em;
+    font-size: 3.2em;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.12;
     color: var(--brand-burgundy);
-    margin: 0 0 20px 0;
+    margin: 0 0 16px 0;
 }
 
 .dark-mode .luxe-hero-title {
@@ -2086,12 +2086,12 @@ footer p {
 
 .luxe-hero-desc {
     font-family: 'Inter', sans-serif;
-    font-size: 1.02em;
-    line-height: 1.7;
+    font-size: 0.98em;
+    line-height: 1.65;
     color: var(--text-main);
     opacity: 0.85;
-    margin-bottom: 35px;
-    max-width: 500px;
+    margin-bottom: 28px;
+    max-width: 480px;
 }
 
 .luxe-btn-burgundy {
@@ -2100,9 +2100,9 @@ footer p {
     gap: 10px;
     background: var(--brand-burgundy);
     color: #FFFFFF !important;
-    padding: 16px 36px;
+    padding: 14px 32px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.8em;
+    font-size: 0.78em;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -2123,8 +2123,8 @@ footer p {
 .luxe-hero-micro-trust {
     display: flex;
     gap: 25px;
-    margin-top: 50px;
-    padding-top: 30px;
+    margin-top: 35px;
+    padding-top: 22px;
     border-top: 1px solid var(--border-color);
     flex-wrap: wrap;
 }
@@ -2132,17 +2132,17 @@ footer p {
 .micro-trust-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .micro-trust-icon {
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: var(--accent-color);
 }
 
 .micro-trust-title {
     font-family: 'Inter', sans-serif;
-    font-size: 0.78em;
+    font-size: 0.75em;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -2156,15 +2156,28 @@ footer p {
 .luxe-hero-img-box {
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
     border: 1px solid var(--border-color);
+    max-height: 480px;
+    max-width: 440px;
+    margin: 0 auto;
 }
 
 .luxe-hero-img-box img {
     width: 100%;
-    height: auto;
+    height: 480px;
     display: block;
     object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 900px) {
+    .luxe-hero-img-box {
+        max-height: 380px;
+    }
+    .luxe-hero-img-box img {
+        height: 380px;
+    }
 }
 
 /* 4. Guarantee Bar */
