@@ -333,6 +333,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const doorLoader = document.getElementById("royal-door-loader");
     if (doorLoader) {
         document.body.style.overflow = "hidden";
+        
+        // Auto open doors after 3 seconds (3000ms)
+        setTimeout(() => {
+            if (typeof window.openRoyalDoors === "function") {
+                window.openRoyalDoors();
+            }
+        }, 3000);
     }
 
 // Global Door Opening Trigger Function (Bound to window for HTML onclick compatibility)
