@@ -2590,7 +2590,7 @@ footer p {
 }
 
 /* ========================================================
-   HIGH-END LUXURY JEWELLERY BOUTIQUE ENTRANCE (SPLASH)
+   WHITE + DARK WALNUT + CHAMPAGNE GOLD LUXURY BOUTIQUE SPLASH
    ======================================================== */
 .royal-door-loader {
     position: fixed;
@@ -2599,9 +2599,9 @@ footer p {
     width: 100vw;
     height: 100vh;
     z-index: 999999;
-    perspective: 1600px;
+    perspective: 1800px;
     overflow: hidden;
-    background: radial-gradient(circle at 50% 40%, #240E14 0%, #120508 60%, #080204 100%);
+    background: #FAF8F5; /* Luxury Warm Ivory Canvas */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2609,12 +2609,38 @@ footer p {
     transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Center Jewellery Showcase Pedestal */
+/* Top ESTD Header Bar */
+.entrance-top-bar {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.estd-badge span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #2C1A14; /* Dark Walnut */
+    text-transform: uppercase;
+}
+
+.estd-divider {
+    font-size: 0.65em;
+    color: #C5A059; /* Champagne Gold */
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+/* Center Hero Display Alcove (Hero Element) */
 .door-center-showcase {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -52%);
     width: 320px;
     height: 480px;
     z-index: 1;
@@ -2625,183 +2651,216 @@ footer p {
     pointer-events: none;
 }
 
-.showcase-pedestal-light {
-    position: absolute;
-    top: -50px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255, 224, 130, 0.25) 0%, rgba(197, 160, 89, 0.08) 45%, rgba(0, 0, 0, 0) 75%);
-    border-radius: 50%;
-    filter: blur(25px);
-    animation: spotlightPulse 3s infinite alternate ease-in-out;
-}
-
-@keyframes spotlightPulse {
-    0% { opacity: 0.7; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1.08); }
-}
-
-.showcase-display-cabinet {
+.showcase-arch-frame {
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
-    border: 1px solid rgba(197, 160, 89, 0.3);
-    background: rgba(18, 5, 8, 0.75);
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), inset 0 0 30px rgba(197, 160, 89, 0.1);
+    background: linear-gradient(180deg, #2A1710 0%, #1A0D08 100%); /* Dark Walnut Interior */
+    border-radius: 140px 140px 12px 12px; /* Arch Shape */
+    border: 3px solid #2C1A14;
+    box-shadow: 0 25px 60px rgba(44, 26, 20, 0.35), inset 0 0 40px rgba(0, 0, 0, 0.8);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
+}
+
+.spotlight-beam {
+    position: absolute;
+    top: -20px;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(255, 224, 130, 0.4) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(0, 0, 0, 0) 75%);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: spotlightSoft 3.5s infinite alternate ease-in-out;
+}
+
+@keyframes spotlightSoft {
+    0% { opacity: 0.75; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1.05); }
+}
+
+.showcase-inner-cabinet {
+    position: relative;
+    width: 100%;
+    height: 85%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    z-index: 2;
 }
 
 .showcase-jewellery-img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.8));
-    animation: floatJewel 4s ease-in-out infinite alternate;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
+    animation: jewelFloat 4s ease-in-out infinite alternate;
 }
 
-@keyframes floatJewel {
+@keyframes jewelFloat {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-8px); }
+    100% { transform: translateY(-6px); }
 }
 
-/* Heavy Wood & Gold Boutique Doors */
+.showcase-gold-plaque {
+    position: absolute;
+    bottom: 15px;
+    background: linear-gradient(90deg, #2C1A14 0%, #3D251C 50%, #2C1A14 100%);
+    color: #FFE082;
+    border: 1px solid #C5A059;
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+/* Ivory & Dark Walnut Handcrafted Boutique Doors */
 .royal-door {
     width: 50vw;
     height: 100vh;
     position: absolute;
     top: 0;
-    background: linear-gradient(135deg, #1C0A0E 0%, #2A0F15 40%, #150608 100%);
     box-sizing: border-box;
-    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.95);
     transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1);
     z-index: 2;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 40px;
-}
-
-.royal-door::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(rgba(197, 160, 89, 0.04) 1px, transparent 1px);
-    background-size: 24px 24px;
-    opacity: 0.5;
-    pointer-events: none;
+    background: #FAF8F5;
 }
 
 .royal-door-left {
     left: 0;
     transform-origin: left center;
-    border-right: 2px solid rgba(197, 160, 89, 0.6);
+    flex-direction: row;
 }
 
 .royal-door-right {
     right: 0;
     transform-origin: right center;
-    border-left: 2px solid rgba(197, 160, 89, 0.6);
+    flex-direction: row-reverse;
 }
 
-/* Door Corner Brackets & Frames */
-.door-gold-frame {
-    width: 82%;
-    height: 82%;
-    max-width: 480px;
-    max-height: 650px;
-    border: 1px solid rgba(197, 160, 89, 0.35);
+/* Dark Walnut Carved Wood Jali Lattice Frame attached to door edge */
+.wood-carved-jali-frame {
+    width: 22%;
+    height: 100vh;
+    background: linear-gradient(135deg, #2C1A14 0%, #3A231B 50%, #1F110C 100%);
+    border-right: 2px solid #C5A059;
+    border-left: 2px solid #C5A059;
     position: relative;
-    padding: 35px 25px;
-    box-sizing: border-box;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.7);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.05) 0%, rgba(0, 0, 0, 0) 80%);
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
-.door-corner {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border-color: #C5A059;
-    border-style: solid;
+.jali-pattern-carving {
+    width: 75%;
+    height: 90%;
+    border: 1px dashed rgba(197, 160, 89, 0.4);
+    background-image: radial-gradient(rgba(197, 160, 89, 0.25) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    opacity: 0.6;
+    border-radius: 4px;
 }
-
-.corner-tl { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
-.corner-tr { top: -2px; right: -2px; border-width: 2px 2px 0 0; }
-.corner-bl { bottom: -2px; left: -2px; border-width: 0 0 2px 2px; }
-.corner-br { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
 
 .door-handle {
     position: absolute;
     top: 50%;
     width: 14px;
-    height: 85px;
-    background: linear-gradient(180deg, #FFE082 0%, #C5A059 50%, #8A651E 100%);
+    height: 80px;
+    background: linear-gradient(180deg, #FFE082 0%, #C5A059 50%, #9A7228 100%);
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(197, 160, 89, 0.6), 0 4px 15px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
     transform: translateY(-50%);
-    z-index: 3;
+    z-index: 5;
 }
 
-.door-handle-left { right: 10px; }
-.door-handle-right { left: 10px; }
+.door-handle-left { right: 8px; }
+.door-handle-right { left: 8px; }
 
-/* Left Door Content */
+/* Ivory White Door Panel Content */
+.ivory-door-panel {
+    flex-grow: 1;
+    height: 100vh;
+    background: #FAF8F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(197, 160, 89, 0.06);
+}
+
+.mandala-watermark {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background-image: radial-gradient(circle, rgba(197, 160, 89, 0.12) 0%, rgba(250, 248, 245, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.watermark-bl { bottom: -60px; left: -60px; }
+.watermark-br { bottom: -60px; right: -60px; }
+
 .door-content-wrapper {
     text-align: center;
-    color: #FFFFFF;
+    color: #2C1A14; /* Dark Walnut Text */
+    max-width: 420px;
     width: 100%;
 }
 
 .brand-monogram-crest {
-    margin-bottom: 20px;
-    position: relative;
+    margin-bottom: 22px;
     display: inline-block;
 }
 
-.crest-crown-svg {
+.monogram-crown-icon .crown-svg {
     width: 32px;
     height: 32px;
     display: block;
-    margin: 0 auto 6px auto;
-    filter: drop-shadow(0 0 8px rgba(255, 224, 130, 0.5));
+    margin: 0 auto 8px auto;
+    filter: drop-shadow(0 2px 5px rgba(197, 160, 89, 0.4));
 }
 
 .monogram-circle {
     width: 65px;
     height: 65px;
     border-radius: 50%;
-    border: 2px solid #C5A059;
+    border: 1.5px solid #C5A059;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, rgba(0,0,0,0.4) 100%);
-    box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.15);
 }
 
 .monogram-circle span {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.2em;
     font-weight: 700;
-    color: #FFE082;
+    color: #2C1A14;
     line-height: 1;
 }
 
 .door-brand-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2em;
+    font-size: 2.5em;
     font-weight: 700;
     letter-spacing: 3px;
-    color: #FFE082;
+    color: #2C1A14;
     margin: 0;
     text-transform: uppercase;
     line-height: 1.1;
@@ -2811,8 +2870,8 @@ footer p {
     font-family: 'Inter', sans-serif;
     font-size: 0.85em;
     font-weight: 600;
-    letter-spacing: 4px;
-    color: #F8E7D2;
+    letter-spacing: 5px;
+    color: #C5A059;
     margin-top: 4px;
     text-transform: uppercase;
 }
@@ -2821,7 +2880,7 @@ footer p {
     width: 90px;
     height: 1px;
     background: linear-gradient(90deg, transparent, #C5A059, transparent);
-    margin: 18px auto;
+    margin: 20px auto;
 }
 
 .door-tagline {
@@ -2829,21 +2888,20 @@ footer p {
     font-size: 0.72em;
     font-weight: 600;
     letter-spacing: 2.5px;
-    color: #C5A059;
+    color: #4A332A;
     text-transform: uppercase;
     margin: 0;
-    opacity: 0.9;
 }
 
-/* Right Door Content */
+/* Right Door Message & Highlights */
 .door-message-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.75em;
+    font-size: 1.9em;
     font-weight: 700;
     letter-spacing: 3px;
-    color: #FFE082;
+    color: #2C1A14;
     margin: 0 0 10px 0;
-    line-height: 1.35;
+    line-height: 1.3;
     text-transform: uppercase;
 }
 
@@ -2851,9 +2909,9 @@ footer p {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-top: 20px;
+    margin-top: 24px;
     text-align: left;
-    max-width: 260px;
+    max-width: 280px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -2862,11 +2920,11 @@ footer p {
     display: flex;
     align-items: center;
     gap: 14px;
-    color: #F8E7D2;
+    color: #3A231B;
     font-family: 'Inter', sans-serif;
     font-size: 0.72em;
     font-weight: 600;
-    letter-spacing: 1.8px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
@@ -2877,10 +2935,10 @@ footer p {
     flex-shrink: 0;
 }
 
-/* Bottom CTA Container */
+/* Bottom CTA & Trust Bar */
 .door-cta-container {
     position: absolute;
-    bottom: 45px;
+    bottom: 35px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
@@ -2888,10 +2946,10 @@ footer p {
 }
 
 .door-cta-btn {
-    background: rgba(18, 5, 8, 0.85);
-    color: #FFE082;
+    background: #FFFFFF;
+    color: #2C1A14;
     border: 1px solid #C5A059;
-    padding: 15px 42px;
+    padding: 14px 44px;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
     font-size: 0.78em;
@@ -2902,15 +2960,16 @@ footer p {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 0 25px rgba(197, 160, 89, 0.25), 0 8px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 20px rgba(197, 160, 89, 0.18), 0 2px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     outline: none;
 }
 
 .door-cta-btn:hover, .door-cta-btn:focus {
-    background: #C5A059;
-    color: #120508;
-    box-shadow: 0 0 35px rgba(197, 160, 89, 0.6), 0 12px 35px rgba(0, 0, 0, 0.8);
+    background: #2C1A14;
+    color: #FFE082;
+    border-color: #2C1A14;
+    box-shadow: 0 10px 30px rgba(44, 26, 20, 0.35);
     transform: translateY(-3px);
 }
 
@@ -2923,13 +2982,21 @@ footer p {
     transform: translateX(4px);
 }
 
-.cta-bottom-flourish {
-    margin-top: 12px;
-    font-size: 0.72em;
-    color: #C5A059;
-    opacity: 0.6;
-    letter-spacing: 4px;
+.bottom-trust-badges {
+    margin-top: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #7D5D4E;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
 }
+
+.dot-sep { color: #C5A059; }
 
 /* Door Opening Animation Triggered States */
 .royal-door-loader.opened .royal-door-left {
@@ -2958,13 +3025,13 @@ footer p {
 
 /* Reduced Motion for Accessibility */
 @media (prefers-reduced-motion: reduce) {
-    .royal-door, .showcase-jewellery-img, .showcase-pedestal-light, .door-cta-btn {
+    .royal-door, .showcase-jewellery-img, .spotlight-beam, .door-cta-btn {
         transition: none !important;
         animation: none !important;
     }
 }
 
-/* Responsive Styles for Mobile & Tablet */
+/* Responsive Composition for Mobile & Tablet */
 @media (max-width: 900px) {
     .royal-door-loader {
         flex-direction: column;
@@ -2972,20 +3039,23 @@ footer p {
     .royal-door {
         width: 100vw;
         height: 50vh;
-        padding: 20px;
+    }
+    .wood-carved-jali-frame {
+        width: 100vw;
+        height: 25px;
+        border-right: none;
+        border-bottom: 2px solid #C5A059;
     }
     .royal-door-left {
         top: 0;
         transform-origin: top center;
-        border-right: none;
-        border-bottom: 1px solid rgba(197, 160, 89, 0.6);
+        flex-direction: column-reverse;
     }
     .royal-door-right {
         bottom: 0;
         top: auto;
         transform-origin: bottom center;
-        border-left: none;
-        border-top: 1px solid rgba(197, 160, 89, 0.6);
+        flex-direction: column;
     }
     .royal-door-loader.opened .royal-door-left {
         transform: rotateX(85deg) translateY(-10%);
@@ -2993,22 +3063,25 @@ footer p {
     .royal-door-loader.opened .royal-door-right {
         transform: rotateX(-85deg) translateY(10%);
     }
-    .door-gold-frame {
-        width: 90%;
-        height: 88%;
+    .ivory-door-panel {
         padding: 15px;
+        height: calc(50vh - 25px);
     }
     .door-brand-title {
-        font-size: 1.6em;
+        font-size: 1.7em;
     }
     .door-message-title {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
     .door-highlights-list {
         gap: 8px;
     }
     .door-cta-btn {
-        padding: 12px 28px;
+        padding: 11px 26px;
         font-size: 0.7em;
+    }
+    .bottom-trust-badges {
+        font-size: 0.55em;
+        gap: 6px;
     }
 }
