@@ -2590,6 +2590,205 @@ footer p {
 }
 
 /* ========================================================
+   HIGH-END LUXURY CONTACT US SECTION & CARDS
+   ======================================================== */
+.luxe-contact-section {
+    padding: 90px 20px;
+    background: linear-gradient(180deg, var(--bg-canvas) 0%, rgba(247, 243, 236, 0.6) 100%);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.luxe-contact-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88em;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    max-width: 620px;
+    margin: 15px auto 50px auto;
+}
+
+.luxe-contact-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 35px;
+    padding: 10px;
+}
+
+.luxe-contact-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    border-radius: 12px;
+    padding: 45px 30px 35px 30px;
+    box-shadow: 0 10px 30px rgba(61, 19, 29, 0.05), inset 0 0 20px rgba(255, 255, 255, 0.9);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-sizing: border-box;
+}
+
+.dark-mode .luxe-contact-card {
+    background: rgba(45, 16, 25, 0.85);
+    border-color: rgba(197, 160, 89, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.luxe-contact-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 20px 45px rgba(197, 160, 89, 0.25), 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-gold-corner {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: var(--accent-gold);
+    border-style: solid;
+    opacity: 0.6;
+}
+
+.corner-tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+.corner-br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+.luxe-contact-icon-box {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #FFE082 0%, #C5A059 70%, #9A7228 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.35);
+    transition: transform 0.4s ease;
+}
+
+.luxe-contact-card:hover .luxe-contact-icon-box {
+    transform: scale(1.08) rotate(5deg);
+}
+
+.contact-svg {
+    width: 32px;
+    height: 32px;
+    color: #1F0A0E;
+}
+
+.luxe-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--brand-burgundy);
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+}
+
+.dark-mode .luxe-card-title {
+    color: #FFE082;
+}
+
+.luxe-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82em;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.8px;
+    margin: 0 0 16px 0;
+}
+
+.luxe-contact-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05em;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+    word-break: break-all;
+}
+
+.luxe-contact-value:hover {
+    color: var(--brand-burgundy);
+    text-decoration: underline;
+}
+
+.dark-mode .luxe-contact-value:hover {
+    color: #FFE082;
+}
+
+.luxe-owner-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    background: rgba(197, 160, 89, 0.12);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.luxe-card-btn {
+    margin-top: auto;
+    width: 100%;
+    background: var(--bg-canvas);
+    color: var(--brand-burgundy);
+    border: 1px solid var(--accent-gold);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.12);
+    transition: all 0.35s ease;
+    box-sizing: border-box;
+}
+
+.dark-mode .luxe-card-btn {
+    background: rgba(30, 10, 16, 0.9);
+    color: #FFE082;
+}
+
+.luxe-card-btn:hover {
+    background: var(--brand-burgundy);
+    color: #FFE082;
+    border-color: var(--brand-burgundy);
+    box-shadow: 0 8px 25px rgba(61, 19, 29, 0.3);
+    transform: translateY(-2px);
+}
+
+.luxe-wa-highlight-btn {
+    background: linear-gradient(135deg, #C5A059 0%, #A8833F 100%);
+    color: #120508 !important;
+    border: none;
+    box-shadow: 0 6px 20px rgba(197, 160, 89, 0.35);
+}
+
+.luxe-wa-highlight-btn:hover {
+    background: #120508;
+    color: #FFE082 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================================
    GRAND CARVED WOODEN PORTAL ENTRANCE (EXACT REFERENCE MATCH)
    ======================================================== */
 .royal-door-loader {
