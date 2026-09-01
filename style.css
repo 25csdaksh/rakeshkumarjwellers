@@ -6,27 +6,27 @@
        ======================================================== */
     
     /* [60% Dominant Color] - Main Neutral Canvas / Body Background */
-    --bg-color: #F5F6F8; /* Alabaster Grey backdrop canvas */
+    --bg-color: #FAF8F5; /* Warm Ivory Alabaster backdrop canvas */
     
     /* [30% Secondary Color] - Containers, Headers, Text & Substructures */
     --card-bg: #FFFFFF; /* High contrast panel base */
-    --primary-color: #0F172A; /* Slate Navy navigation structural block */
+    --primary-color: #FAF6EF; /* Warm light structural base */
     --text-main: #1E293B; /* Deep Slate text */
-    --text-light: #F8FAFC; /* White-slate text for navigation */
-    --glass-bg: rgba(245, 246, 248, 0.85);
-    --shadow-color: rgba(15, 23, 42, 0.04);
+    --text-light: #1E293B; /* Light mode text */
+    --glass-bg: rgba(255, 255, 255, 0.88);
+    --shadow-color: rgba(15, 23, 42, 0.05);
     
     /* [10% Accent Color] - Action elements, active indicators & borders */
-    --accent-color: #C5A059; /* Classic Champagne Gold accent */
-    --accent-hover: #A8833F;
-    --accent-glow: rgba(197, 160, 89, 0.25);
-    --border-color: rgba(197, 160, 89, 0.22);
-    --glass-border: rgba(197, 160, 89, 0.18);
+    --accent-color: #B8860B; /* Deep Rich Gold accent */
+    --accent-hover: #9A6E07;
+    --accent-glow: rgba(184, 134, 11, 0.22);
+    --border-color: rgba(184, 134, 11, 0.25);
+    --glass-border: rgba(184, 134, 11, 0.2);
     
-    /* Luxury CSS Gradient Backgrounds */
-    --header-bg: radial-gradient(circle at 50% 100%, rgba(197, 160, 89, 0.12) 0%, rgba(15, 23, 42, 0) 75%), linear-gradient(135deg, #1A2333 0%, #0F172A 100%);
-    --hero-bg: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.12) 0%, rgba(15, 23, 42, 0) 80%), linear-gradient(135deg, #0F172A 0%, #0A0F1D 100%);
-    --text-header-sub: #E2E8F0;
+    /* Luxury Light CSS Gradient Backgrounds */
+    --header-bg: radial-gradient(circle at 50% 100%, rgba(184, 134, 11, 0.08) 0%, rgba(250, 246, 239, 0) 75%), linear-gradient(180deg, #FFFFFF 0%, #F5EFE6 100%);
+    --hero-bg: radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.1) 0%, rgba(250, 248, 245, 0) 80%), linear-gradient(135deg, #FAF8F5 0%, #F0E8D9 100%);
+    --text-header-sub: #475569;
 }
 
 .dark-mode {
@@ -577,13 +577,13 @@ nav a:hover::after {
 
 /* Hero Glassmorphic Title Plate */
 .hero-title-plate {
-    background: rgba(15, 23, 42, 0.4);
+    background: rgba(255, 255, 255, 0.82);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--border-color);
     padding: 35px 55px;
     border-radius: 6px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     text-align: center;
     max-width: 700px;
     width: 85%;
@@ -612,11 +612,11 @@ nav a:hover::after {
 
 .hero h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 3.5em;
     letter-spacing: 4px;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #FFE082 0%, #C5A059 50%, #8D6E63 100%);
+    background: linear-gradient(135deg, #B8860B 0%, #7D5705 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
@@ -624,13 +624,19 @@ nav a:hover::after {
     text-shadow: none !important;
 }
 
+.dark-mode .hero h2 {
+    background: linear-gradient(135deg, #FFE082 0%, #C5A059 50%, #E2B93C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .hero p {
     font-family: 'Inter', sans-serif;
     font-size: 0.95em;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--text-light);
+    color: var(--text-main);
     opacity: 0.85;
     margin: 15px 0 0 0;
 }
@@ -1634,4 +1640,171 @@ footer p {
         transform: scale(0.92);
         opacity: 0;
     }
+}
+
+/* ========================================================
+   ROYAL SHOWCASE ADVERTISEMENT BANNER
+   ======================================================== */
+.showcase-ad-section {
+    padding: 90px 20px;
+    background: var(--bg-color);
+}
+
+.showcase-ad-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px var(--shadow-color), 0 0 35px var(--accent-glow);
+    position: relative;
+}
+
+.showcase-ad-badge {
+    background: linear-gradient(90deg, #B8860B 0%, #FFE082 50%, #B8860B 100%);
+    color: #0F172A;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 12px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.showcase-ad-content {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 50px 45px;
+}
+
+@media (max-width: 900px) {
+    .showcase-ad-content {
+        grid-template-columns: 1fr;
+        padding: 30px 25px;
+        gap: 30px;
+    }
+}
+
+.showcase-ad-image-wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    border: 1px solid var(--border-color);
+}
+
+.showcase-ad-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.65s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.showcase-ad-image-wrapper:hover .showcase-ad-img {
+    transform: scale(1.04);
+}
+
+.showcase-ad-details {
+    text-align: left;
+}
+
+.showcase-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.showcase-ad-details h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2em;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 10px 0;
+    background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #855C08 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .showcase-ad-details h2 {
+    background: linear-gradient(135deg, #FFE082 0%, #C5A059 50%, #E2B93C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.showcase-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4em;
+    font-style: italic;
+    color: var(--accent-color);
+    margin: 0 0 20px 0;
+    letter-spacing: 1.5px;
+}
+
+.showcase-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    line-height: 1.75;
+    color: var(--text-main);
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+.showcase-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.highlight-chip {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    background: rgba(184, 134, 11, 0.08);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    color: var(--text-main);
+}
+
+.showcase-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.showcase-wa-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    margin: 10px 0;
+    background: #25D366 !important;
+    color: white !important;
+    border: 1px solid #25D366 !important;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.showcase-wa-btn:hover {
+    background: #1EBE5D !important;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35) !important;
+    transform: translateY(-2px);
 }
