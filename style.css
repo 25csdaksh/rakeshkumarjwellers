@@ -2588,3 +2588,164 @@ footer p {
     color: var(--text-main);
     opacity: 0.8;
 }
+
+/* ========================================================
+   ROYAL GRAND DOOR ENTRANCE ANIMATION
+   ======================================================== */
+.royal-door-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    perspective: 1500px;
+    overflow: hidden;
+    pointer-events: auto;
+    background: #0D0306;
+}
+
+.royal-door {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(135deg, #2E0F17 0%, #3D131D 50%, #1D070C 100%);
+    box-sizing: border-box;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.9);
+    transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.royal-door-left {
+    left: 0;
+    transform-origin: left center;
+    border-right: 2px solid var(--accent-gold);
+}
+
+.royal-door-right {
+    right: 0;
+    transform-origin: right center;
+    border-left: 2px solid var(--accent-gold);
+}
+
+/* Door Ornaments & Carvings */
+.door-panel-inner {
+    width: 75%;
+    height: 80%;
+    border: 2px solid rgba(197, 160, 89, 0.35);
+    border-radius: 8px;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(197, 160, 89, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.door-carving {
+    font-size: 3.5em;
+    opacity: 0.35;
+    color: var(--accent-gold);
+}
+
+.door-handle {
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 75px;
+    background: linear-gradient(180deg, #FFE082 0%, #C5A059 50%, #8A651E 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.6), 0 4px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%);
+}
+
+.door-handle-left {
+    right: 12px;
+}
+
+.door-handle-right {
+    left: 12px;
+}
+
+/* Center Emblem */
+.royal-door-center-emblem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    background: radial-gradient(circle, #3D131D 0%, #1A070B 90%);
+    border: 2px solid var(--accent-gold);
+    padding: 35px 45px;
+    border-radius: 50px;
+    box-shadow: 0 0 50px rgba(197, 160, 89, 0.5), inset 0 0 25px rgba(0, 0, 0, 0.8);
+    transition: all 0.8s ease;
+    width: 85%;
+    max-width: 520px;
+}
+
+.emblem-crown {
+    font-size: 2.5em;
+    margin-bottom: 8px;
+    animation: crownGlow 2s infinite alternate;
+}
+
+@keyframes crownGlow {
+    0% { transform: scale(1); filter: drop-shadow(0 0 5px #FFE082); }
+    100% { transform: scale(1.1); filter: drop-shadow(0 0 20px #FFE082); }
+}
+
+.emblem-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #FFE082;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.emblem-gold-line {
+    width: 90px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFE082, transparent);
+    margin: 10px auto;
+}
+
+.emblem-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: #F8E7D2;
+    margin: 0;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* Door Opened State */
+.royal-door-loader.opened .royal-door-left {
+    transform: rotateY(-105deg);
+}
+
+.royal-door-loader.opened .royal-door-right {
+    transform: rotateY(105deg);
+}
+
+.royal-door-loader.opened .royal-door-center-emblem {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.royal-door-loader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}

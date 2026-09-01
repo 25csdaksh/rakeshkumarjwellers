@@ -329,6 +329,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // STYLISH SCROLL ANIMATION & INTERACTIVITY SUITE
     // ========================================================
     
+    // 0. Royal Grand Door Opening Entrance Animation
+    const doorLoader = document.getElementById("royal-door-loader");
+    if (doorLoader) {
+        document.body.style.overflow = "hidden";
+        setTimeout(() => {
+            doorLoader.classList.add("opened");
+            setTimeout(() => {
+                doorLoader.classList.add("fade-out");
+                document.body.style.overflow = "";
+                setTimeout(() => {
+                    doorLoader.style.display = "none";
+                }, 600);
+            }, 1600);
+        }, 1200);
+    }
+    
     // 1. Inject Top Scroll Progress Bar if missing
     if (!document.getElementById("scroll-progress")) {
         const progressBar = document.createElement("div");
