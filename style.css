@@ -485,13 +485,15 @@ nav a:hover::after {
 
 /* Authentication & Utility Toolbar Navigation */
 .auth-nav {
-    position: absolute;
-    top: 25px;
-    right: 30px;
+    position: relative;
+    top: auto;
+    right: auto;
     display: flex;
     align-items: center;
     gap: 12px;
     z-index: 100;
+    margin-left: auto;
+    flex-shrink: 0;
 }
 
 .user-welcome-text {
