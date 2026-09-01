@@ -335,8 +335,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = "hidden";
     }
 
-// Global Door Opening Trigger Function
-function openRoyalDoors() {
+// Global Door Opening Trigger Function (Bound to window for HTML onclick compatibility)
+window.openRoyalDoors = function() {
     const doorLoader = document.getElementById("royal-door-loader");
     if (!doorLoader || doorLoader.classList.contains("opened")) return;
     
@@ -344,19 +344,27 @@ function openRoyalDoors() {
     
     setTimeout(() => {
         doorLoader.classList.add("fade-out");
-        document.body.style.overflow = "";
+        document.body.style.overflow = "auto";
         setTimeout(() => {
             doorLoader.style.display = "none";
         }, 800);
     }, 1400);
-}
+};
+
+// Explicit Event Listener for CTA Button
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("enterExperienceBtn");
+    if (btn) {
+        btn.addEventListener("click", window.openRoyalDoors);
+    }
+});
 
 // Accessibility: Allow keyboard Enter or Space to open doors
 document.addEventListener("keydown", (e) => {
     const doorLoader = document.getElementById("royal-door-loader");
     if (doorLoader && doorLoader.style.display !== "none" && (e.key === "Enter" || e.key === " ")) {
         e.preventDefault();
-        openRoyalDoors();
+        window.openRoyalDoors();
     }
 });
     
