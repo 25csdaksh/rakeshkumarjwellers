@@ -329,44 +329,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // STYLISH SCROLL ANIMATION & INTERACTIVITY SUITE
     // ========================================================
     
-    // 0. Royal Boutique Entrance Controller (Doors Stay 100% Closed Initially)
-    const doorLoader = document.getElementById("royal-door-loader");
-    if (doorLoader) {
-        document.body.style.overflow = "hidden";
-    }
-
-// Global Door Opening Trigger Function (Bound to window for HTML onclick compatibility)
-window.openRoyalDoors = function() {
-    const doorLoader = document.getElementById("royal-door-loader");
-    if (!doorLoader || doorLoader.classList.contains("opened")) return;
-    
-    doorLoader.classList.add("opened");
-    
-    setTimeout(() => {
-        doorLoader.classList.add("fade-out");
-        document.body.style.overflow = "auto";
-        setTimeout(() => {
-            doorLoader.style.display = "none";
-        }, 800);
-    }, 1400);
-};
-
-// Explicit Event Listener for CTA Button
-document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("enterExperienceBtn");
-    if (btn) {
-        btn.addEventListener("click", window.openRoyalDoors);
-    }
-});
-
-// Accessibility: Allow keyboard Enter or Space to open doors
-document.addEventListener("keydown", (e) => {
-    const doorLoader = document.getElementById("royal-door-loader");
-    if (doorLoader && doorLoader.style.display !== "none" && (e.key === "Enter" || e.key === " ")) {
-        e.preventDefault();
-        window.openRoyalDoors();
-    }
-});
+    // 0. Ensure normal page scroll
+    document.body.style.overflow = "auto";
     
     // 1. Inject Top Scroll Progress Bar if missing
     if (!document.getElementById("scroll-progress")) {
